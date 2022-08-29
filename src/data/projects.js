@@ -1,0 +1,32 @@
+const projects = [
+    {
+        title: 'Kaleidoscope',
+        description: 'Budget app that lets users compare different possible expense plans',
+        image: 'https://i.imgur.com/vKOdCf9.png',
+        repositoryLink: 'https://github.com/jtreeves/budget-frontend',
+        deploymentLink: 'https://kaleidoscope-budget.herokuapp.com'
+    },
+    {
+        title: 'Math Attack!',
+        description: 'Game to test your knowledge with basic arithmetic operations',
+        image: 'https://i.imgur.com/XUexFZD.png',
+        repositoryLink: 'https://github.com/jtreeves/vue-learn-math',
+        deploymentLink: 'https://vue-math-attack.netlify.app/home'
+    },
+    {
+        title: 'Regressions',
+        description: 'Library to generate statistical regressions models from provided data sets',
+        image: 'https://i.imgur.com/NXAcCbT.png',
+        repositoryLink: 'https://github.com/jtreeves/regressions_library',
+        deploymentLink: 'https://pypi.org/project/regressions/'
+    },
+    {
+        title: 'Salesforce Certification Calculator',
+        description: 'Module to determine the cumulative score for Salesforce exams',
+        image: 'https://i.imgur.com/kH9ITXj.png',
+        repositoryLink: 'https://github.com/jtreeves/salesforce_certification_calculator',
+        deploymentLink: 'https://rubygems.org/gems/salesforce_certification_calculator'
+    }
+]
+
+export default projects
