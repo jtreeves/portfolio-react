@@ -1,6 +1,7 @@
 import {
     Routes,
     Route,
+    Navigate
   } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -13,39 +14,39 @@ function App() {
     return (
         <Routes>
             <Route
-                path="/"
+                path='/'
                 element={<Home />}
-            >
-                <Route
-                    path='home'
-                    element={<Home />}
-                />
+            />
+            
+            <Route
+                path='home'
+                element={<Navigate to='/' replace />}
+            />
 
-                <Route
-                    path='about'
-                    element={<About />}
-                />
-                
-                <Route
-                    path='contact'
-                    element={<Contact />}
-                />
+            <Route
+                path='about'
+                element={<About />}
+            />
+            
+            <Route
+                path='contact'
+                element={<Contact />}
+            />
 
-                <Route
-                    path='resume'
-                    element={<Resume />}
-                />
+            <Route
+                path='resume'
+                element={<Resume />}
+            />
 
-                <Route
-                    path="projects"
-                    element={<Projects />}
-                >
-                    <Route 
-                        path=":projectName"
-                        element={<ProjectDetails />}
-                    />
-                </Route>
-            </Route>
+            <Route
+                path='projects'
+                element={<Projects />}
+            />
+
+            <Route 
+                path='projects/:projectName'
+                element={<ProjectDetails />}
+            />
         </Routes>
     )
 }
