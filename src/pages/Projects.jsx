@@ -3,10 +3,12 @@ import projects from '../data/projects'
 
 function Projects() {
     return (
-        <main>
+        <main id='projects'>
             <h1>Projects</h1>
 
-            <ProjectsList projects={projects} />
+            <ProjectsList 
+                projects={projects} 
+            />
         </main>
     )
 }

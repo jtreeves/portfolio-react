@@ -8,32 +8,37 @@ function ProjectDetails() {
     const project = findProject(path)
 
     return (
-        <main>
+        <main id='project-details'>
             <h1>{project.title}</h1>
-
-            <img src={project.image} alt={project.title} />
 
             <p>{project.description}</p>
 
-            <a 
-                href={project.deploymentLink}
-                target='_blank'
-                rel='noreferrer'
-            >
-                <Button variant='primary'>
-                    View deployed site
-                </Button>
-            </a>
+            <img 
+                src={project.image} 
+                alt={project.title}
+            />
 
-            <a 
-                href={project.repositoryLink}
-                target='_blank'
-                rel='noreferrer'
-            >
-                <Button variant='primary'>
-                    View code
-                </Button>
-            </a>
+            <article>
+                <a 
+                    href={project.deploymentLink}
+                    target='_blank'
+                    rel='noreferrer'
+                >
+                    <Button variant='primary'>
+                        View deployed {project.type}
+                    </Button>
+                </a>
+
+                <a 
+                    href={project.repositoryLink}
+                    target='_blank'
+                    rel='noreferrer'
+                >
+                    <Button variant='primary'>
+                        View code
+                    </Button>
+                </a>
+            </article>
         </main>
     )
 }
