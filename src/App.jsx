@@ -1,8 +1,7 @@
 import {
     Routes,
     Route,
-    Navigate,
-    useLocation
+    Navigate
 } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -14,12 +13,9 @@ import NavBar from './components/NavBar'
 import './style/main.css'
 
 function App() {
-    const location = useLocation()
-    const notHome = location.pathname !== '/'
-
     return (
         <>
-            {notHome && <NavBar />}
+            <NavBar />
 
             <Routes>
                 <Route
