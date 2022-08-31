@@ -9,45 +9,52 @@ import Contact from './pages/Contact'
 import Resume from './pages/Resume'
 import Projects from './pages/Projects'
 import ProjectDetails from './pages/ProjectDetails'
+import NavBar from './components/NavBar'
+import './style/main.css'
 
 function App() {
     return (
-        <Routes>
-            <Route
-                path='/'
-                element={<Home />}
-            />
+        <>
+            <NavBar />
             
-            <Route
-                path='home'
-                element={<Navigate to='/' replace />}
-            />
+            <Routes>
 
-            <Route
-                path='about'
-                element={<About />}
-            />
-            
-            <Route
-                path='contact'
-                element={<Contact />}
-            />
+                <Route
+                    path='/'
+                    element={<Home />}
+                />
+                
+                <Route
+                    path='home'
+                    element={<Navigate to='/' replace />}
+                />
 
-            <Route
-                path='resume'
-                element={<Resume />}
-            />
+                <Route
+                    path='about'
+                    element={<About />}
+                />
+                
+                <Route
+                    path='contact'
+                    element={<Contact />}
+                />
 
-            <Route
-                path='projects'
-                element={<Projects />}
-            />
+                <Route
+                    path='resume'
+                    element={<Resume />}
+                />
 
-            <Route 
-                path='projects/:projectName'
-                element={<ProjectDetails />}
-            />
-        </Routes>
+                <Route
+                    path='projects'
+                    element={<Projects />}
+                />
+
+                <Route 
+                    path='projects/:projectName'
+                    element={<ProjectDetails />}
+                />
+            </Routes>
+        </>
     )
 }
 
