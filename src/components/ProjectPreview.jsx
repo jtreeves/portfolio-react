@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 import { Card, Button } from 'react-bootstrap'
-import createProjectPath from '../utilities/createProjectPath'
+import hyphenateWords from '../utilities/hyphenateWords'
 
 function ProjectPreview(props) {
-    const projectPath = createProjectPath(props.title)
+    const projectPath = hyphenateWords(props.title)
 
     return (
         <Card>
