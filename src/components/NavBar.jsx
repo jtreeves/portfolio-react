@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Container, Navbar as BootstrapNavBar, Nav } from 'react-bootstrap'
+import person from '../data/person'
 
 function NavBar() {
     const [expanded, setExpanded] = useState(false)
@@ -16,7 +17,7 @@ function NavBar() {
                     to='/' 
                     className='navbar-brand'
                 >
-                    Jackson Reeves
+                    {person.name}
                 </Link>
 
                 <BootstrapNavBar.Toggle
