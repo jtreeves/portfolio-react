@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {  faBriefcase, faComment, faPaperPlane, faFileAlt } from '@fortawesome/free-solid-svg-icons'
+import { faBriefcase, faComment, faPaperPlane, faFileAlt } from '@fortawesome/free-solid-svg-icons'
 
 
 function Home() {

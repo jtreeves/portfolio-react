@@ -1,8 +1,9 @@
 import {
     Routes,
     Route,
-    Navigate
-  } from 'react-router-dom'
+    Navigate,
+    useLocation
+} from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -13,10 +14,13 @@ import NavBar from './components/NavBar'
 import './style/main.css'
 
 function App() {
+    const location = useLocation()
+    const notHome = location.pathname !== '/'
+
     return (
         <>
-            <NavBar />
-            
+            {notHome && <NavBar />}
+
             <Routes>
 
                 <Route
