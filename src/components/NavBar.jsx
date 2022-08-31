@@ -9,8 +9,9 @@ function NavBar() {
     return (
         <BootstrapNavBar 
             expanded={expanded} 
-            bg='light' 
+            bg='light'
             expand='lg'
+            sticky='top'
         >
             <Container fluid>
                 <Link 
