@@ -1,13 +1,63 @@
 main {
-    margin: 100px;
-    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 50px;
+    gap: 25px;
 }
 
-.profile-picture {
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#home img, #about img {
     height: 300px;
     width: 300px;
 }
 
+#home article {
+    display: flex;
+    gap: 50px;
+}
+
 .linked-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-decoration: none;
+    gap: 10px;
+}
+
+#projects img {
+    width: 350px;
+}
+
+#projects ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+#project-details img {
+    width: 500px;
+}
+
+#project-details article {
+    display: flex;
+    gap: 25px;
+}
+
+#about div {
+    display: flex;
+    gap: 20px;
 }
