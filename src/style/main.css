@@ -2,3 +2,12 @@ main {
     margin: 100px;
     padding: 100px;
 }
+
+.profile-picture {
+    height: 300px;
+    width: 300px;
+}
+
+.linked-icons {
+    text-decoration: none;
+}

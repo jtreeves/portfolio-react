@@ -22,7 +22,6 @@ function App() {
             {notHome && <NavBar />}
 
             <Routes>
-
                 <Route
                     path='/'
                     element={<Home />}

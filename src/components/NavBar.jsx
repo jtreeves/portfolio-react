@@ -8,56 +8,56 @@ function NavBar() {
     return (
         <BootstrapNavBar 
             expanded={expanded} 
-            bg="light" 
-            expand="lg"
+            bg='light' 
+            expand='lg'
         >
             <Container fluid>
                 <Link 
-                    to="/" 
-                    className="navbar-brand"
+                    to='/' 
+                    className='navbar-brand'
                 >
                     Jackson Reeves
                 </Link>
 
                 <BootstrapNavBar.Toggle
-                    aria-controls="navbarScroll"
-                    onClick={() => setExpanded(expanded ? false : "expanded")}
+                    aria-controls='navbarScroll'
+                    onClick={() => setExpanded(expanded ? false : 'expanded')}
                 />
 
                 <BootstrapNavBar.Collapse 
-                    id="navbarScroll"
+                    id='navbarScroll'
                 >
                     <Nav 
-                        className="me-auto my-2 my-lg-0" 
+                        className='me-auto my-2 my-lg-0' 
                         navbarScroll
                     >
                         <Link
-                            to="/about"
-                            className="nav-link"
+                            to='/about'
+                            className='nav-link'
                             onClick={() => setExpanded(false)}
                         >
                             About
                         </Link>
                         
                         <Link
-                            to="/contact"
-                            className="nav-link"
+                            to='/contact'
+                            className='nav-link'
                             onClick={() => setExpanded(false)}
                         >
                             Contact
                         </Link>
                         
                         <Link
-                            to="/resume"
-                            className="nav-link"
+                            to='/resume'
+                            className='nav-link'
                             onClick={() => setExpanded(false)}
                         >
                             Resume
                         </Link>
                         
                         <Link
-                            to="/projects"
-                            className="nav-link"
+                            to='/projects'
+                            className='nav-link'
                             onClick={() => setExpanded(false)}
                         >
                             Projects
