@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
+import sendEmail from '../services/sendEmail'
 
 function Contact() {
     const [formData, setFormData] = useState({
@@ -7,6 +8,10 @@ function Contact() {
         email: '',
         message: ''
     })
+    const [success, setSuccess] = useState(false)
+    const [submitted, setSubmitted] = useState(false)
+    const successMessage = 'Congrats! Your message was sent successfully.'
+    const errorMessage = 'Oh no! Something went wrong, and your message was not sent.'
 
     const handleChange = (event) => {
         event.preventDefault()
@@ -15,8 +20,9 @@ function Contact() {
         setFormData({...formData, [key]: value})
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault()
+        await sendEmail(formData, setSubmitted, setSuccess)
         setFormData({
             name: '',
             email: '',
@@ -31,6 +37,8 @@ function Contact() {
             <p>
                 If you'd like collaborate on an interesting project or just chat code, feel free to hit me up via <a href='mailto:jr@jacksonreeves.com'>email</a>.
             </p>
+
+            <p>{success && submitted ? successMessage : errorMessage}</p>
 
             <Form onSubmit={handleSubmit} id='contact-form'>
                 <Form.Group>
