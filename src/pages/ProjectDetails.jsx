@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
+import TechnologiesList from '../components/TechnologiesList'
 import findProject from '../utilities/findProject'
 
 function ProjectDetails() {
@@ -39,6 +40,10 @@ function ProjectDetails() {
                     </Button>
                 </a>
             </article>
+
+            <TechnologiesList 
+                technologies={project.technologies}
+            />
         </main>
     )
 }
