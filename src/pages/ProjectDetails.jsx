@@ -1,11 +1,11 @@
-import { useLocation } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import findProject from '../utilities/findProject'
 
 function ProjectDetails() {
-    const location = useLocation()
-    const path = location.pathname
-    const project = findProject(path)
+    const params = useParams()
+    const name = params.projectName
+    const project = findProject(name)
 
     return (
         <main id='project-details'>
