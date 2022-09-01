@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBriefcase, faComment, faPaperPlane, faFileAlt } from '@fortawesome/free-solid-svg-icons'
+import { faBriefcase, faComment, faPaperPlane, faFileAlt, faTools } from '@fortawesome/free-solid-svg-icons'
 import person from '../data/person'
-
 
 function Home() {
     return (
@@ -65,6 +64,18 @@ function Home() {
                     />
 
                     <p>projects</p>
+                </Link>
+
+                <Link 
+                    to='/technologies'
+                    className='linked-icons'
+                >
+                    <FontAwesomeIcon 
+                        icon={faTools} 
+                        size='6x' 
+                    />
+
+                    <p>technologies</p>
                 </Link>
             </article>
         </main>

@@ -64,6 +64,14 @@ function NavBar() {
                         >
                             Projects
                         </Link>
+                        
+                        <Link
+                            to='/technologies'
+                            className='nav-link'
+                            onClick={() => setExpanded(false)}
+                        >
+                            Technologies
+                        </Link>
                     </Nav>
                 </BootstrapNavBar.Collapse>
             </Container>
