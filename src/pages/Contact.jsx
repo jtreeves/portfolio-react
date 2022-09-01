@@ -12,6 +12,7 @@ function Contact() {
     const [submitted, setSubmitted] = useState(false)
     const successMessage = 'Congrats! Your message was sent successfully.'
     const errorMessage = 'Oh no! Something went wrong, and your message was not sent.'
+    const feedbackMessage = success && submitted ? successMessage : !success && submitted ? errorMessage : ''
 
     const handleChange = (event) => {
         event.preventDefault()
@@ -38,7 +39,7 @@ function Contact() {
                 If you'd like collaborate on an interesting project or just chat code, feel free to hit me up via <a href='mailto:jr@jacksonreeves.com'>email</a>.
             </p>
 
-            <p>{success && submitted ? successMessage : errorMessage}</p>
+            <p>{feedbackMessage}</p>
 
             <Form onSubmit={handleSubmit} id='contact-form'>
                 <Form.Group>
@@ -66,7 +67,7 @@ function Contact() {
                 </Form.Group>
                 
                 <Form.Group>
-                    <Form.Label>Email</Form.Label>
+                    <Form.Label>Message</Form.Label>
 
                     <Form.Control 
                         as='textarea'
