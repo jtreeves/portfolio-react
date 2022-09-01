@@ -1,11 +1,10 @@
 import hyphenateWords from './hyphenateWords'
 import projects from '../data/projects'
 
-function findProject(path) {
-    const title = path.replace('/projects/', '')
+function findProject(name) {
     const filteredProjects = projects.filter(project => {
-        const currentTitle = hyphenateWords(project.title)
-        return currentTitle === title
+        const currentName = hyphenateWords(project.title)
+        return currentName === name
     })
     const result = filteredProjects[0]
     return result
