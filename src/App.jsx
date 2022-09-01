@@ -10,6 +10,8 @@ import Contact from './pages/Contact'
 import Resume from './pages/Resume'
 import Projects from './pages/Projects'
 import ProjectDetails from './pages/ProjectDetails'
+import Technologies from './pages/Technologies'
+import TechnologyDetails from './pages/TechnologyDetails'
 import NavBar from './components/NavBar'
 import './style/main.css'
 
@@ -55,6 +57,16 @@ function App() {
                 <Route 
                     path='projects/:projectName'
                     element={<ProjectDetails />}
+                />
+
+                <Route
+                    path='technologies'
+                    element={<Technologies />}
+                />
+
+                <Route 
+                    path='technologies/:technologyName'
+                    element={<TechnologyDetails />}
                 />
             </Routes>
         </>
