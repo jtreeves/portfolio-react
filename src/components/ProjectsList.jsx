@@ -1,9 +1,9 @@
 import ProjectPreview from './ProjectPreview'
 
 function ProjectsList(props) {
-    const projectCards = props.projects.map(project => {
+    const projectCards = props.projects.map((project, index) => {
         return (
-            <li>
+            <li key={index}>
                 <ProjectPreview 
                     title={project.title}
                     image={project.image}

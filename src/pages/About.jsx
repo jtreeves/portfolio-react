@@ -1,9 +1,11 @@
 import person from '../data/person'
 
 function About() {
-    const bio = person.bio.map(paragraph => {
+    const bio = person.bio.map((paragraph, index) => {
         return (
-            <p>{paragraph}</p>
+            <p key={index}>
+                {paragraph}
+            </p>
         )
     })
 
