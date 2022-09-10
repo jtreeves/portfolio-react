@@ -1,16 +1,5 @@
 # Instructions
 
-## Minimum Features
-
-- App coded by you (e.g., a React app; not something from a free website builder like Wix or SquareSpace)
-- Deployed (e.g., Netlify)
-- Landing page that prominently features your name (e.g., “above the scroll”)
-- Easy to navigate (e.g., a nav bar; if a user goes to another page, they should at least have place where they can easily go back to your home page)
-- About section with your name, photo, and bio
-- Contact section with a call to action and way to reach you (e.g., a link to your email or a contact form)
-- Resume section describing your basic work experience and featuring a link to download a PDF of your resume
-- Projects section with all your past coding projects (presumably the section will include a list of projects that you can click on to view more details for each project)
-
 ## Grading Requirements
 
 Note that many of the Deployed Site requirements directly map to a corresponding Coded Repository requirements. We only broke them up to emphasize that we’ll be looking at the Deployed Site rubric when viewing your Netlify site and looking at the Coded Repository rubric when viewing your GitHub repo. The overlap also nicely emphasizes how code translates to the user experience.
@@ -18,19 +7,19 @@ Note that many of the Deployed Site requirements directly map to a corresponding
 ### Deployed Site
 
 - Deployed using Netlify with a customized URL (e.g., jackson-reeves-portfolio, not something randomly generated like spicy-koala-happy123)
-- Landing page prominently features your name (e.g., above the scroll)
+- Landing page prominently features your name (i.e., above the scroll)
 - Navigation bar (it must at least link to the home page, but additional links are recommended)
 - About section with your name, photo, and bio
 - Contact section with a call to action and way to reach you (e.g., a link to your email or a contact form)
 - Resume section describing your basic work experience and featuring a link to download a PDF of your resume
 - Projects section with all your past coding projects (should include a list of projects that you can click on to view more details for each project; must include your unit 1 and unit 2 projects, but you are encouraged to also include any other coding projects you have publicly deployed, either from classwork or beyond—for instance, if you did a neat Tic Tac Toe game, include it)
-- Favicon with your face or something else to clearly identify you (not the React icon)
 
 ### Coded Repository
 
+- Public repository on GitHub
 - Freshly created React app (i.e., not a forked or cloned repo)
 - Regular commits (at least 10)
-- Component for landing page (it can be the App.jsx file if desired)
+- Component for landing page (it can be the App.js file if desired)
 - Component for navigation bar
 - Component for about section
 - Component for contact section
@@ -40,15 +29,6 @@ Note that many of the Deployed Site requirements directly map to a corresponding
 - Component for project details (it should display all the info you’ve stored on your projects)
 - Data folder or file with info for your past projects; each project’s info should be contained in an object, and you must include at least the name of the project, a link to an image of the project, a description of the project, a link to the project’s GitHub repo, and a link to the deployed version of the project
 - README explaining that this is your portfolio, which you built using React
-
-### Failure Criteria
-
-There are always many ways to fail an assignment. Failure to complete any individual requirement mentioned above will result in failing this assignment. Here are two additional ways that will result in an immediate failure, as they strongly imply not having done the actual work and having just directly plagiarized the provided solution code, which has been provided only for guidance and clarity:
-
-- Submitting a repo that was forked from another repo
-- Submitting a repo that was not forked but only contains 1 commit with your final solution
-
-NOTE: Plagiarism is not tolerated at GA, and violation of that can result in more serious consequences than merely failing an assignment.
 
 ### Leveling Up
 
@@ -68,7 +48,7 @@ Clear the README, empty out the contents of App.jsx, and delete the 2 CSS files 
 
 #### C. Install dependencies
 
-Bootstrap, React Router, Font Awesome
+Bootstrap, React Router
 
 #### D. Set up file structure
 
@@ -108,11 +88,7 @@ For this stage, you just need the files to exist; they don’t need to contain a
 
 We recommend Imgur. This would include a photo of you, plus screenshots for each of your projects. Hint: You might want to make all of your images square before uploading them.
 
-#### F. Change favicon to something customized to you
-
-Use a third-party site to create a favicon from a photo of you or something else you would like to use to represent you. Name it `favicon.ico`, then upload it to the public folder.
-
-#### G. Add a PDF of your resume to the public folder
+#### F. Add a PDF of your resume to the public folder
 
 You’ll need to update your resume, prettify it, and convert it to a PDF.
 
@@ -136,7 +112,7 @@ Use Bootstrap. Add links to all the pages.
 
 ### 5. Build Home page
 
-Include your name, your photo, plus your title (e.g., “Software Engineer”). Add links to all the other pages using icons from Font Awesome. This page should not include the NavBar component.
+Include your name, your photo, plus your title (e.g., “Software Engineer”).
 
 ### 6. Build other static pages
 
@@ -156,21 +132,13 @@ Include a short description of your work experience along with a link to downloa
 
 ### 7. Fill in your project data
 
-#### A. Fill in each project’s details
-
-Each project you want to include should have its own file within the data folder. In those files, create objects named after their respective project, and add the following keys (and their corresponding values):
+Create an array in the `projects.js` file. Each project will be an object inside that array with the following keys (and their corresponding values):
 
 - title
 - description
 - image
 - repositoryLink
 - deploymentLink
-
-Export each object at the bottom of its file.
-
-#### B. Create an array of all projects
-
-Import each individual project’s object into the main `projects.js` file. Create an array called `projects` that contains each of the imported project objects. Export the array at the bottom of the file.
 
 ### 8. Display projects
 
@@ -180,7 +148,7 @@ Use a Bootstrap card to display a project’s title and image. It should obtain 
 
 #### B. Build ProjectsList section
 
-Map over an array of projects, which it should obtain via its props. For each project, return a ProjectPreview component, which will receive the project’s title, image, and a link to take the user to the appropriate path to see all the project’s details. To generate the right path for the link, fill out the hyphenateWords utility function, which should take a string of words (e.g., a project’s title), lowercase all letters, then replace all spaces in the title with hyphens (if there are any spaces). It should then return this hyphenated string. The fill out the createProjectPath utility function. It should take a string of words (e.g., a project’s title), apply the hyphenateWords function, then return that string with “/projects/” appended at the beginning. The createProjectPath function will need to be imported into the ProjectsList component, invoked within the map, passed the project’s title, and its result should be set to a link variable and then passed to the ProjectPreview component.
+Map over an array of projects, which it should obtain via its props. For each project, return a ProjectPreview component, which will receive the project’s title, image, and a link to take the user to the appropriate path to see all the project’s details. To generate the right path for the link, fill out the hyphenateWords utility function, which should take a string of words (e.g., a project’s title), lowercase all letters, then replace all spaces in the title with hyphens (if there are any spaces). It should then return this hyphenated string. Then fill out the createProjectPath utility function. It should take a string of words (e.g., a project’s title), apply the hyphenateWords function, then return that string with “/projects/” appended at the beginning. The createProjectPath function will need to be imported into the ProjectsList component, invoked within the map, passed the project’s title, and its result should be set to a link variable and then passed to the ProjectPreview component.
 
 #### C. Build Projects page
 
@@ -204,9 +172,9 @@ Confirm that everything runs locally as desired, then deploy to Netlify. Customi
 
 ### 2. Make mobile responsive
 
-### 3. Add submission form to Contact page
+### 3. Customize favicon
 
-### 4. Add dark mode option
+### 4. Add submission form to Contact page
 
 ### 5. Add footer
 
@@ -220,6 +188,8 @@ For instance, date, inspiration, lessons learned, or future goals.
 
 ### 8. Display technologies independently with their own pages
 
+### 9. Add dark mode option
+
 ## Suggestions
 
-Add a Twitter feed of your latest tweets (this will require having a backend), add a feed of your blog posts from Medium or DEV, add a feed of your GitHub commits. Turn it into more of a SPA portfolio by putting the pages all on the home page, giving them id’s, and having the nav bar just slide to them when clicked. Look at some other portfolios for more ideas.
+Add a feed of your blog posts from Medium or DEV. Turn it into more of a SPA portfolio by putting the pages all on the home page, giving them id’s, and having the nav bar just slide to them when clicked. Look at some other portfolios for more ideas.
