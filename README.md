@@ -49,97 +49,98 @@ You do not need to follow these steps to successfully complete the assignment. A
 
 ### 1. Initialize repo
 
-#### A. Create app
-
-#### B. Delete boilerplate
-
-Clear the README, empty out the contents of App.jsx, and delete the 2 CSS files at the root.
-
-#### C. Install dependencies
-
-Bootstrap, React Router
-
-#### D. Set up file structure
-
-Folders within `src`:
-
-- pages
-    - Home.jsx
-    - About.jsx
-    - Contact.jsx
-    - Resume.jsx
-    - Projects.jsx
-    - ProjectDetails.jsx
-- sections
-    - NavBar.jsx
-    - ProjectsList.jsx
-    - ProjectPreview.jsx
-- data
-    - projects.js
-    - unit1Project.js
-    - unit2Project.js
-- utilities
-    - hyphenateWords.js
-    - createProjectPath.js
-    - determineTitle.js
-    - findProject.js
-- styling
-    - main.css
-    - home.css
-    - about.css
-    - contact.css
-    - resume.css
-    - projects.css
-
-For this stage, you just need the files to exist; they don’t need to contain any content.
-
-#### E. Upload any images to an external site for hosting
-
-We recommend Imgur. This would include a photo of you, plus screenshots for each of your projects. Hint: You might want to make all of your images square before uploading them.
-
-#### F. Add a PDF of your resume to the public folder
-
-You’ll need to update your resume, prettify it, and convert it to a PDF.
+Use `npx create-react-app` to generate a new React repo. Remember to only do so after entering your labs folder, and remember to include the name of the project at the end of that command (e.g., `portfolio-react`). Once created locally, be sure to also create a remote version on GitHub, then link the two via the CLI. Commits matter! So link them first thing, and periodically push your code after completing each step.
 
 ### 2. Mock out basic functional components for all pages
 
-You’ll need function declarations containing return statements, along with default exports at the bottom, for the Home, About, Contact, Resume, and Projects components stored in the pages folder. For each one, in the return statement, add an `h1` with the name of the page (e.g., the About component should contain an `h1` containing the text “About”).
+Since our portfolio will have separate pages for each section, we'll want to create separate components for each of them. Since they'll all be pages, lets group them together in their own folder.
+
+Add a `pages` folder within your project's `src` folder. Within that folder, create separate files for each of the pages: Home, About, Contact, Resume, and Projects. Let's add functional components to each of those files. We'll build them out later, but for now let's just return a heading with the name of the page.
+
+Here's what the About component would look like at this stage:
+
+```js
+function About() {
+    return (
+        <h1>About</h1>
+    )
+}
+```
+
+(Remember to export it!)
 
 ### 3. Add routing
 
-#### A. Import necessary library modules and page components in App
+Now we need to add a way to view those components. We'll have each one live on its own route; as a result, if you're running your repo locally, and you go to `localhost:3000/about`, you should see the heading from the About component. But that doesn't work currently because our app doesn't have any routing yet. Let's fix that!
 
-#### B. Create a Router wrapper in App
+Install React Router:
 
-#### C. Create routes for each page within Router wrapper
+```bash
+npm i react-router-dom
+```
 
-Confirm these work by running the app and going to each page. When you visit each page, you should see the appropriate heading (e.g., when you visit `/about`, you should see a heading containing “About”). Add a route for root (`/`), and have it render or redirect to the Home component. The Project Details component should live on a subpath to `/projects` (e.g., `/projects/:projectName`)
+In your `App.js`, import `Routes` and `Route` from `react-router-dom`. Also import the components for the pages you made in the last section. The top of your file should now look similar to this:
 
-### 4. Build NavBar section
+```js
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Resume from './pages/Resume'
+import Projects from './pages/Projects'
+```
 
-Use Bootstrap. Add links to all the pages.
+Delete all the boilerplate from the App component. Then add opening and closing `Routes` tags to enclose all the routes. For each page, create a `Route` for it inside those `Routes` tags. Here's how the About route would look:
 
-### 5. Build Home page
+```js
+<Route path='about' element={<About />} />
+```
 
-Include your name, your photo, plus your title (e.g., “Software Engineer”).
+Make sure you put the Home component on the root route (aka, `/`). Confirm that you can now see the About header when viewing `localhost:3000/about`.
 
-### 6. Build other static pages
+### 4. Build NavBar component
 
-All these pages should include the NavBar component.
+Now we want a way to easily visit the different pages without needing to manually type in the URL path each time. A navigation bar should do the trick! And we can store it in its own component. Since this won't be a page, let's create a new folder for it (and other non-page components we'll need to build later). Within the `src` folder, create an `elements` folder. Then add a new file: `NavBar.js`. While we could use standard HTML `nav` tags to build our nav bar, let's use Bootstrap. It won't offer any major benefits for the basic version of this portfolio, but later if you try to make it mobile-responsive, you'll probably want a collapsible nav bar, and Bootstrap's Navbar component will make that a much easier upgrade later.
 
-#### A. Build About page
+Install React Bootstrap:
 
-Include your name, photo, and bio.
+```bash
+npm i react-bootstrap
+```
 
-#### B. Build Contact page
+Within your nav bar file, create a NavBar component. Import `Container`, `Navbar`, and `Nav` from `react-bootstrap`. Since each element in the nav bar will need to be linked, import `Link` from `react-router-dom`. You can use this starter code:
 
-Include a call to action and a link to email you.
+```js
+<Navbar bg='light'>
+    <Container fluid>
+        <Link to='/' className='navbar-brand'>
+            Your Name
+        </Link>
 
-#### C. Build Resume page
+        <Nav>
+            <Link to='/about' className='nav-link'>
+                About
+            </Link>
+            
+            <Link to='/contact' className='nav-link'>
+                Contact
+            </Link>
+        </Nav>
+    </Container>
+</Navbar>
+```
 
-Include a short description of your work experience along with a link to download a PDF of your resume.
+Remember to add links to each of the pages you've created so far.
 
-### 7. Fill in your project data
+After you create the component, add it to all of your pages by placing it within your App component, above the routes.
+
+### 5. Flesh out your static pages
+
+Previously, we just added some dummy text to all our pages. Let's go back and give each of them some real content. (Don't worry about the Projects page yet; we'll do that next.)
+
+On your home page, include your name, your photo, plus your title (e.g., “Software Engineer”). On your about page, include your photo along with a paragraph or two about yourself. On your contact page, add a basic call to action (e.g., "Reach out if you'd like to work with me!") and a link to your email. On your resume page, add a link to download a PDF of your resume. (You'll need to update your resume, export it as a PDF, and add it to this project's `public` folder first.)
+
+### 6. Store your project data
 
 Create an array in the `projects.js` file. Each project will be an object inside that array with the following keys (and their corresponding values):
 
