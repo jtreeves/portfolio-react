@@ -1,8 +1,17 @@
 # Instructions
 
-## Grading Requirements
+## Goal
 
-Note that many of the Deployed Site requirements directly map to a corresponding Coded Repository requirements. We only broke them up to emphasize that we’ll be looking at the Deployed Site rubric when viewing your Netlify site and looking at the Coded Repository rubric when viewing your GitHub repo. The overlap also nicely emphasizes how code translates to the user experience.
+It's finally time to create your portfolio! We want you to have a professional portfolio that you can use to show off all the projects you've built in this cohort to prospective employers. And what better way to do than by helping you build one yourself using React? The basic instructions in this lab will result in a simple portfolio that you can personally style and customize to your heart's content.
+
+Here's an example of the sort of bare-bones portfolio that this lab can help you create: [Jackson's Basic portfolio](https://basics--jackson-reeves-portfolio.netlify.app)
+
+And here are some examples of how you can use the bonuses and personal styling to really customize it for your own brand:
+- [Jackson's Portfolio](https://complete--jackson-reeves-portfolio.netlify.app)
+- Emily's Portfolio
+- Beryl's Portfolio
+
+## Minimum Requirements
 
 ### Deployed Site
 
@@ -11,7 +20,7 @@ Note that many of the Deployed Site requirements directly map to a corresponding
 - Navigation bar (it must at least link to the home page, but additional links are recommended)
 - About section with your name, photo, and bio
 - Contact section with a call to action and way to reach you (e.g., a link to your email or a contact form)
-- Resume section describing your basic work experience and featuring a link to download a PDF of your resume
+- Resume section featuring a link to download a PDF of your resume
 - Projects section with all your past coding projects (should include a list of projects that you can click on to view more details for each project; must include your unit 1 and unit 2 projects, but you are encouraged to also include any other coding projects you have publicly deployed, either from classwork or beyond—for instance, if you did a neat Tic Tac Toe game, include it)
 
 ### Coded Repository
@@ -36,7 +45,7 @@ Although not hard requirements, a personalized design can help your portfolio st
 
 ## Steps
 
-You do not need to follow these steps to successfully complete the assignment. As long as you turn something in that meets the above requirements, you’ll pass! Feel free to skip these steps and just try it on your own. However, we’ve provided these steps to give you a guaranteed blueprint for creating a solid portfolio. Furthermore, even if you want your portfolio to differ dramatically from some of the sample portfolios you’ve seen that use this basic template, we would still recommend that you follow along with these initial steps, since many of the concepts should be applicable to any sort of portfolio. In other words, this template is designed to allow for flexibility either now while you initially create it or later if you want to add something on to it (or remove something from it). But, again, don’t feel obligated to follow these instructions to the letter (e.g., you don’t need to use the exact same file structure we recommend).
+You do not need to follow these steps to successfully complete the assignment. As long as you turn something in that meets the above requirements, you’ll pass! Feel free to skip these steps and just try it on your own. However, we’ve provided these steps to give you a guaranteed blueprint for creating a solid portfolio. Furthermore, even if you want your portfolio to differ dramatically from some of the sample portfolios you’ve seen that use this basic template, we would still recommend that you follow along with these initial steps, since many of the concepts should be applicable to any sort of portfolio. In other words, this template is designed to allow for flexibility either now while you initially create it or later if you want to add something on to it (or remove something from it).
 
 ### 1. Initialize repo
 
