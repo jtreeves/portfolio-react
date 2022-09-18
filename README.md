@@ -4,7 +4,7 @@
 
 It's finally time to create your portfolio! We want you to have a professional portfolio that you can use to show off all the projects you've built in this cohort to prospective employers. And what better way to do than by helping you build one yourself using React? The basic instructions in this lab will result in a simple portfolio that you can personally style and customize to your heart's content.
 
-Here's an example of the sort of bare-bones portfolio that this lab can help you create: [Jackson's Basic portfolio](https://basics--jackson-reeves-portfolio.netlify.app)
+Here's an example of the sort of bare-bones portfolio that this lab can help you create: [Jackson's Basic Portfolio](https://basics--jackson-reeves-portfolio.netlify.app)
 
 And here are some examples of how you can use the bonuses and personal styling to really customize it for your own brand:
 - [Jackson's Portfolio](https://complete--jackson-reeves-portfolio.netlify.app)
