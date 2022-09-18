@@ -142,7 +142,7 @@ On your home page, include your name, your photo, plus your title (e.g., “Soft
 
 ### 6. Store your project data
 
-Create an array in the `projects.js` file. Each project will be an object inside that array with the following keys (and their corresponding values):
+Now we get to the fun part! The core of any good portfolio is a way to display your past projects. Before we can get to displaying them, though, we'll need to first add the raw data for all of them. Let's create a `data` folder within the `src` folder to store this info. Inside that folder, create a `projects.js` file. That file should contain an array of objects, with each object representing one of your projects. Each of those project objects should contain the following keys (with their corresponding values): 
 
 - title
 - description
@@ -150,29 +150,83 @@ Create an array in the `projects.js` file. Each project will be an object inside
 - repositoryLink
 - deploymentLink
 
-### 8. Display projects
+All of those keys will have string values, with the `image` key matching a URL for an image that should be a screenshot of that deployed project. You should include both your unit 1 and unit 2 projects, but feel free to add others (e.g., Tic-Tac-Toe).
 
-#### A. Build ProjectPreview section
+### 7. Display a list of all your projects
 
-Use a Bootstrap card to display a project’s title and image. It should obtain this info via its props. It should be hyperlinked based on its props’ link property.
+Import the projects data into your Projects component. For now, let's just worry about displaying an unordered list of all your projects' titles. To do that, map over your projects array, so that on each iteration you return an `li` tag containing the project's title. Then wrap the result in `ul` tags. Confirm that you can now see a list of all your projects when you visit `localhost:3000/projects`.
 
-#### B. Build ProjectsList section
+### 8. Break up that functionality across multiple, more specialized components
 
-Map over an array of projects, which it should obtain via its props. For each project, return a ProjectPreview component, which will receive the project’s title, image, and a link to take the user to the appropriate path to see all the project’s details. To generate the right path for the link, fill out the hyphenateWords utility function, which should take a string of words (e.g., a project’s title), lowercase all letters, then replace all spaces in the title with hyphens (if there are any spaces). It should then return this hyphenated string. Then fill out the createProjectPath utility function. It should take a string of words (e.g., a project’s title), apply the hyphenateWords function, then return that string with “/projects/” appended at the beginning. The createProjectPath function will need to be imported into the ProjectsList component, invoked within the map, passed the project’s title, and its result should be set to a link variable and then passed to the ProjectPreview component.
+One of the great things about React components is they allow you to easily break down larger functionality into more easily managed chunks. Right now, the Projects component still looks pretty simple, but as we flesh it out in further steps, it'll get pretty busy. Furthermore, bite-sized components can be reused elsewhere in the app. While we won't benefit from that feature in the basic version of the portfolio, the bonus section demonstrates a way that you could.
 
-#### C. Build Projects page
+Let's start by moving the actual mapping out of the Projects component and into its own component. Create a file in your `elements` folder called `ProjectsList.js`. Next, build out the component. It should look nearly identical to what you previously had in the Projects component, with one notable exception: it will accept `props`, which it will use to get the projects data. Replace your previous code in the Projects component with a tag for the new ProjectsList component, and pass it the imported projects array data as a prop. Confirm that the projects page still looks exactly the same.
 
-Import projects from the data folder. Render the ProjectsList component, and pass it the projects array as its projects prop. Like the static pages, this component should display the NavBars component.
+Next, let's create a separate component for the project titles inside the `li` tags. We know! It's only the title! However, in the next step, we'll make it display more of the project's data, thus justifying giving it its own component and making it a simple way to preview the project. As a result, let's call this component ProjectPreview and store it in its own file in the `elements` folder. Just like the ProjectsList component, it will accept `props`, but this time it will use those props to get the project's title. Back in the ProjectsList component, replace the current content within the `li` tags with a ProjectPreview tag, and pass it the project's title as a prop. Again, confirm that the projects page still looks exactly the same.
 
-#### D. Build ProjectDetails page
+Note the component hierarchy for the projects at this stage:
 
-Use the useParams hook to determine what hyphenated projectName is coming in from the route. Fill out the determineTitle utility function, which should take in a hyphenated string, replace its hyphens with spaces, then capitalize the words appropriately (e.g., all words except for specific words like “and,” “the,” or “from,” unless those happen to the be the first word; you’ll need to make sure the titles of your projects abide by these rules), then returns the title as a string. Fill out the findProject utility function, which should take in a hyphenated string and return the object for the project that matches that hyphenated string. To do this, you will need to import the projects data file along with the recently created determineTitle function. You will invoke the determineTitle function with hyphenated string that the findProject function takes as an argument, then the function will search through the projects array until it finds an object with a title that matches the aforementioned title. It will then return that project’s object. You will need to import the findProject function in the ProjectDetails component, then pass it the hyphenated string that it got from the useParams function to retrieve the specific project. On the page, render the title, image, and description, along with links to the GitHub repo and the deployed site. Like the static pages, this component should display the NavBars component.
+```mermaid
+flowchart LR
+A(Projects) ---> |projects prop| B(ProjectsList)
+B ---> |title prop| C(ProjectPreview)
+```
 
-### 9. Update README
+### 9. Display more data in the ProjectPreview component
 
-Specify that this is your portfolio, that you coded it in JavaScript, built it with the React framework, and mention the libraries you used. Add any other features to your README to give it some personality. For instance, include a Future Goals section listing out what additional features you’d like to add to your portfolio (e.g., dark mode, a contact form, mobile responsiveness).
+Instead of just displaying the project's title, let's display the project's image, too. We can use a Bootstrap card to make that pretty. After you import `Card` from `react-bootstrap`, you can use this code for displaying the image and title:
 
-### 10. Deploy repo
+```js
+<Card>
+    <Card.Img variant='top' src={props.image} />
+
+    <Card.Body>
+        <Card.Title>
+            {props.title}
+        </Card.Title>
+    </Card.Body>
+</Card>
+```
+
+Remember to then pass the image as a prop to ProjectPreview within the ProjectsList component.
+
+### 10. Build a separate component to display all of a project's data
+
+So far, we've only displayed a project's title and image. But we have so much more info for each project stored in the data array! Because there's so much more information, we don't want to display it all at once on the Projects page. Instead, we'll create a separate page for displaying all of a project's data.
+
+First, create a new file in the `pages` folder: `ProjectDetails.js`. Create a component inside that function. (Note: It won't accept props.) In step 11, we'll make this page dynamically display a different project's data based on the URL path. However, for this stage, we're just going to statically display the data for the first project from the data array. To do that, you'll need to import the `projects` array. Then, in the return section of the component, use an `h1` tag to display the first project's title, a `p` tag to display its description, an `img` tag with a `src` property equal to the project's image, and two buttons, with the first one linking to its GitHub repo and the second one linking to its deployed site. (Hint: You can get the first project's title via `projects[0].title`, and you can use that same pattern for the other properties.)
+
+Second, we need to add a new route to the App in order to display this page. Give the route a path of `projects/:projectDetails`, and be sure to define this route after your definition for the main Projects page's route.
+
+Now, if you go to `localhost:3000/projects/1`, you should see the details for your first project.
+
+### 11. Create helper functions to make ProjectDetails dynamic
+
+Let's say two of your projects are Tic-Tac-Toe and Connect Four. It would be great if when you visited `localhost:3000/projects/tic-tac-toe`, it displayed the details for your Tic-Tac-Toe project, and when you visited `localhost:3000/projects/connect-four`, it displayed the details for your Connect Four project. That's exactly what we built the ProjectDetails component to do and exactly why we put it on a route with a path of `projects/:projectDetails`. However, we need to solve two different problems in order to do that:
+- How to convert a title like Connect Four to a string like "connect-four"
+- How to take a string like "connect-four" and return all the details for the project with a title that matches
+
+Let's use helper functions to solve both of those problems. Start by creating a `utilities` folder within your `src` folder.
+
+For the first problem, create a file called `hyphenateWords.js` in the `utilities` folder, and inside it create a function that must:
+- Take a string as a parameter (e.g., the title of a project)
+- Return a new string with all lowercase letters, hyphens instead of spaces, and no special characters (e.g., commas, apostrophes)
+- Hint: Check out JavaScript's built-in `replace` method, and look into basic Regex (e.g., `/\s/g` will get all spaces)
+
+For the second problem, create a file called `findProject.js` in the `utilities` folder, and inside it create a function that must:
+- Take a string as a parameter (e.g., "connect-four")
+- Return an object containing all of a project's data
+- Hint: Import the projects data array, use the `filter` method, and implement the `hyphenateWords` function that you just created earlier in order to confirm a match
+
+Once you have those helpers in place, let's implement them in our components.
+
+In the ProjectPreview component, use the `hyphenateWords` function to convert the project's title to a URL path. Add a button to your current card, and link it to that URL path.
+
+In the ProjectDetails component, use the `findProject` function to retrieve that project's data based on its URL path. Then, replace the static references to your first project with dynamic references based on the current project. (Hint: Replace `projects[0].title` with `project.title`, and follow that pattern for the other properties.) But how do we know what the URL path is? Thankfully, React Router provides a hook that can solve that problem. Import `useParams` from `react-router-dom`, and use that get the path parameters from the URL.
+
+Confirm that when you go to your projects page, you can click on different projects' buttons to see their full details rendered on a separate page. 
+
+### 12. Deploy repo
 
 Confirm that everything runs locally as desired, then deploy to Netlify. Customize your URL. Then reconfirm that everything runs as desired on its deployed version.
 
