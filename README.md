@@ -37,7 +37,6 @@ And here are some examples of how you can use the bonuses and personal styling t
 - Component for project teasers (it should display a minimal amount of information for the project; clicking on one will show you that project’s details page)
 - Component for project details (it should display all the info you’ve stored on your projects)
 - Data folder or file with info for your past projects; each project’s info should be contained in an object, and you must include at least the name of the project, a link to an image of the project, a description of the project, a link to the project’s GitHub repo, and a link to the deployed version of the project
-- README explaining that this is your portfolio, which you built using React
 
 ### Leveling Up
 
@@ -53,7 +52,7 @@ Use `npx create-react-app` to generate a new React repo. Remember to only do so 
 
 ### 2. Mock out basic functional components for all pages
 
-Since our portfolio will have separate pages for each section, we'll want to create separate components for each of them. Since they'll all be pages, lets group them together in their own folder.
+Since our portfolio will have separate pages for each section, we'll want to create separate components for each of them. Since they'll all be pages, let's group them together in their own folder.
 
 Add a `pages` folder within your project's `src` folder. Within that folder, create separate files for each of the pages: Home, About, Contact, Resume, and Projects. Let's add functional components to each of those files. We'll build them out later, but for now let's just return a heading with the name of the page.
 
