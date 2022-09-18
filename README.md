@@ -168,8 +168,8 @@ Note the component hierarchy for the projects at this stage:
 
 ```mermaid
 flowchart LR
-A(Projects) ---> |projects prop| B(ProjectsList)
-B ---> |title prop| C(ProjectPreview)
+A(Projects) ---> |passes projects prop| B(ProjectsList)
+B ---> |passes title prop| C(ProjectPreview)
 ```
 
 ### 9. Display more data in the ProjectPreview component
