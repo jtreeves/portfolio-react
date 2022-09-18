@@ -21,7 +21,7 @@ And here are some examples of how you can use the bonuses and personal styling t
 - About section with your name, photo, and bio
 - Contact section with a call to action and way to reach you (e.g., a link to your email or a contact form)
 - Resume section featuring a link to download a PDF of your resume
-- Projects section with all your past coding projects (should include a list of projects that you can click on to view more details for each project; must include your unit 1 and unit 2 projects, but you are encouraged to also include any other coding projects you have publicly deployed, either from classwork or beyond—for instance, if you did a neat Tic Tac Toe game, include it)
+- Projects section with all your past coding projects (should include a list of projects that you can click on to view more details for each project; must include your unit 1 and unit 2 projects, but you are encouraged to also include any other coding projects you have publicly deployed, either from classwork or beyond—for instance, if you did a neat Tic-Tac-Toe game, include it)
 
 ### Coded Repository
 
