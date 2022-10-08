@@ -1,4 +1,4 @@
-import person from '../data/person'
+import person from '../data/about'
 
 function NavBar(props) {
     return (

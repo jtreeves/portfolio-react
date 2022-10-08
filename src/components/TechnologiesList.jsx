@@ -3,7 +3,6 @@ import TechnologyPreview from './TechnologyPreview'
 function TechnologiesList(props) {
     const technologyCards = props.technologies.map((technology, index) => {
         const setter = () => {
-            console.log('SET TECHNOLOGY HIT')
             props.setTechnology(technology)
             props.setSection('technologies')
         }

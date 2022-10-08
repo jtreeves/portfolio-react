@@ -1,7 +1,7 @@
-import person from '../data/person'
+import about from '../data/about'
 
 function About() {
-    const bio = person.bio.map((paragraph, index) => {
+    const bio = about.bio.map((paragraph, index) => {
         return (
             <p key={index}>
                 {paragraph}
@@ -15,8 +15,8 @@ function About() {
 
             <div>
                 <img 
-                    src={person.casualPhoto} 
-                    alt={person.name}
+                    src={about.casualPhoto} 
+                    alt={about.name}
                 />
 
                 <article>

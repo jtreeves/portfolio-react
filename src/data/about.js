@@ -1,4 +1,4 @@
-const person = {
+const about = {
     name: 'Jackson Reeves',
     title: 'Software Engineer',
     professionalPhoto: 'https://i.imgur.com/3V1QkTD.jpeg',
@@ -10,4 +10,4 @@ const person = {
     ]
 }
 
-export default person
+export default about
