@@ -1,13 +1,13 @@
 function Contact() {
     return (
-        <main id='contact'>
+        <section id='contact'>
             <h1>Contact</h1>
 
             <p>
                 If you'd like collaborate on an interesting project or just chat code, feel free to hit me up via <a href='mailto:jr@jacksonreeves.com'>email</a>.
             </p>
 
-            <section>
+            <article>
                 Reach out to me on social media!
                 <ul>
                     <li>
@@ -50,8 +50,8 @@ function Contact() {
                         </a>
                     </li>
                 </ul>
-            </section>
-        </main>
+            </article>
+        </section>
     )
 }
 

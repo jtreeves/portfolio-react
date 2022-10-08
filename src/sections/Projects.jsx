@@ -3,13 +3,13 @@ import projects from '../data/projects'
 
 function Projects() {
     return (
-        <main id='projects'>
+        <section id='projects'>
             <h1>Projects</h1>
 
             <ProjectsList 
                 projects={projects} 
             />
-        </main>
+        </section>
     )
 }
 

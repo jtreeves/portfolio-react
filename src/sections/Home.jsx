@@ -2,7 +2,7 @@ import person from '../data/person'
 
 function Home() {
     return (
-        <main id='home'>
+        <section id='home'>
             <h1>{person.name}</h1>
 
             <h2>{person.title}</h2>
@@ -13,7 +13,7 @@ function Home() {
             />
 
             <p>{person.tagline}</p>
-        </main>
+        </section>
     )
 }
 

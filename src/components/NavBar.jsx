@@ -3,27 +3,24 @@ import person from '../data/person'
 function NavBar(props) {
     return (
         <nav>
-            <span onClick={props.setActiveSection('home')}>
+            <span onClick={() => props.setSection('home')}>
                 {person.name}
             </span>
 
             <ul>
-                <li >
-                    <div onClick={props.setActiveSection('about')}>
-                        About
-
-                    </div>
+                <li onClick={() => props.setSection('about')}>
+                    About
                 </li>
                 
-                <li onClick={props.setActiveSection('contact')}>
+                <li onClick={() => props.setSection('contact')}>
                     Contact
                 </li>
                 
-                <li onClick={props.setActiveSection('resume')}>
+                <li onClick={() => props.setSection('resume')}>
                     Resume
                 </li>
                 
-                <li onClick={props.setActiveSection('projects')}>
+                <li onClick={() => props.setSection('projects')}>
                     Projects
                 </li>
             </ul>

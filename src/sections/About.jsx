@@ -10,7 +10,7 @@ function About() {
     })
 
     return (
-        <main id='about'>
+        <section id='about'>
             <h1>About</h1>
 
             <div>
@@ -23,7 +23,7 @@ function About() {
                     {bio}
                 </article>
             </div>
-        </main>
+        </section>
     )
 }
 

@@ -8,31 +8,17 @@ import './style/main.css'
 import { useState } from 'react'
 
 function App() {
-    const [activeSection, setActiveSection] = useState('home')
-    console.log('ACTIVE SECTION: ', activeSection)
-
-    const displaySection = () => {
-        switch (activeSection) {
-            case 'home':
-                return <Home />
-            case 'about': 
-                return <About />
-            case 'contact':
-                return <Contact />
-            case 'resume':
-                return <Resume />
-            case 'projects':
-                return <Projects />
-            default:
-                return <Home />
-        }
-    }
+    const [section, setSection] = useState('home')
 
     return (
         <>
-            <NavBar setActiveSection={setActiveSection} />
+            <NavBar setSection={setSection} />
 
-            {displaySection()}
+            {section === 'home' && <Home />}
+            {section === 'about' && <About />}
+            {section === 'contact' && <Contact />}
+            {section === 'resume' && <Resume />}
+            {section === 'projects' && <Projects />}
         </>
     )
 }
