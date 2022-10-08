@@ -26,7 +26,7 @@ function ProjectDetails(props) {
                 {features}
             </ul>
 
-            <span>{props.project.date}</span>
+            <span>{props.project.date.toLocaleString('default', { month: 'long' })} {props.project.date.getFullYear()}</span>
 
             <article>
                 <a 
