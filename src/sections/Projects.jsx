@@ -1,23 +1,19 @@
-import { useState } from 'react'
 import ProjectDetails from '../components/ProjectDetails'
 import ProjectsList from '../components/ProjectsList'
-import projects from '../data/projects'
 import filterOutMainProject from '../utilities/filterOutMainProject'
 
-function Projects() {
-    const [project, setProject] = useState(projects[0])
-
+function Projects(props) {
     return (
         <section id='projects'>
             <h1>Projects</h1>
 
             <ProjectDetails 
-                project={project}
+                project={props.project}
             />
 
             <ProjectsList 
-                projects={filterOutMainProject(project.title)} 
-                setProject={setProject}
+                projects={filterOutMainProject(props.project.title)} 
+                setProject={props.setProject}
             />
         </section>
     )
