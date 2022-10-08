@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
 import findProject from '../utilities/findProject'
 
 function ProjectDetails() {
@@ -24,9 +23,9 @@ function ProjectDetails() {
                     target='_blank'
                     rel='noreferrer'
                 >
-                    <Button variant='primary'>
+                    <button>
                         View deployed {project.type}
-                    </Button>
+                    </button>
                 </a>
 
                 <a 
@@ -34,9 +33,9 @@ function ProjectDetails() {
                     target='_blank'
                     rel='noreferrer'
                 >
-                    <Button variant='primary'>
+                    <button>
                         View code
-                    </Button>
+                    </button>
                 </a>
             </article>
         </main>
