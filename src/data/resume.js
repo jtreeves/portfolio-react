@@ -1,6 +1,6 @@
 const resume = [
     {
-        positon: 'Software Engineer',
+        position: 'Software Engineer',
         company: 'Slalom Build',
         startDate: new Date('June 20, 2022'),
         endDate: null

@@ -7,7 +7,7 @@ function Resume() {
 
         return (
             <li key={index}>
-                {job.positon} at {job.company} ({startDate}-{endDate})
+                {job.position} at {job.company} ({startDate}-{endDate})
             </li>
         )
     })
