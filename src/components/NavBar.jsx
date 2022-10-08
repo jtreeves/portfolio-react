@@ -1,46 +1,30 @@
-import { Link } from 'react-router-dom'
 import person from '../data/person'
 
-function NavBar() {
+function NavBar(props) {
     return (
         <nav>
-            <Link 
-                to='/'
-            >
+            <span onClick={props.setActiveSection('home')}>
                 {person.name}
-            </Link>
+            </span>
 
             <ul>
-                <li>
-                    <Link
-                        to='/about'
-                    >
+                <li >
+                    <div onClick={props.setActiveSection('about')}>
                         About
-                    </Link>
-                </li>
 
-                <li>
-                    <Link
-                        to='/contact'
-                    >
-                        Contact
-                    </Link>
-                </li>
-
-                <li>
-                    <Link
-                        to='/resume'
-                    >
-                        Resume
-                    </Link>
+                    </div>
                 </li>
                 
-                <li>
-                    <Link
-                        to='/projects'
-                    >
-                        Projects
-                    </Link>
+                <li onClick={props.setActiveSection('contact')}>
+                    Contact
+                </li>
+                
+                <li onClick={props.setActiveSection('resume')}>
+                    Resume
+                </li>
+                
+                <li onClick={props.setActiveSection('projects')}>
+                    Projects
                 </li>
             </ul>
         </nav>

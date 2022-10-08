@@ -1,9 +1,8 @@
-import { useParams } from 'react-router-dom'
 import findProject from '../utilities/findProject'
 
 function ProjectDetails() {
-    const params = useParams()
-    const name = params.projectName
+    // const params = useParams()
+    const name = 'regressions'
     const project = findProject(name)
 
     return (

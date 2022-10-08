@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import hyphenateWords from '../utilities/hyphenateWords'
 
 function ProjectPreview(props) {
@@ -16,11 +15,9 @@ function ProjectPreview(props) {
                     {props.title}
                 </h3>
 
-                <Link to={projectPath}>
-                    <button>
-                        Learn more
-                    </button>
-                </Link>
+                <button>
+                    Learn more
+                </button>
             </section>
         </div>
     )
