@@ -1,4 +1,5 @@
 import resume from '../data/resume'
+import countProjectsUsingTechnology from '../utilities/countProjectsUsingTechnology'
 
 function Resume() {
     const jobs = resume.jobs.map((job, index) => {
@@ -20,6 +21,10 @@ function Resume() {
         )
     })
 
+    const javascriptProjects = countProjectsUsingTechnology('JavaScript')
+    const pythonProjects = countProjectsUsingTechnology('Python')
+    const rubyProjects = countProjectsUsingTechnology('Ruby')
+
     return (
         <section id='resume'>
             <h1>Resume</h1>
@@ -38,6 +43,22 @@ function Resume() {
 
             <ul>
                 {feedback}
+            </ul>
+
+            <h2>Languages</h2>
+
+            <ul>
+                <li>
+                    JavaScript: {javascriptProjects}
+                </li>
+                
+                <li>
+                    Python: {pythonProjects}
+                </li>
+                
+                <li>
+                    Ruby: {rubyProjects}
+                </li>
             </ul>
         </section>
     )
