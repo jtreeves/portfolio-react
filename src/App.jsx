@@ -14,9 +14,6 @@ function App() {
     const [section, setSection] = useState('home')
     const [project, setProject] = useState(projects[0])
     const [technology, setTechnology] = useState(listAllTechnologies()[0])
-    console.log('SECTION: ', section)
-    console.log('PROJECT: ', project)
-    console.log('TECHNOLOGY: ', technology)
 
     return (
         <>
