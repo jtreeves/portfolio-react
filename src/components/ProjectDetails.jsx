@@ -1,34 +1,28 @@
-import findProject from '../utilities/findProject'
-
-function ProjectDetails() {
-    // const params = useParams()
-    const name = 'regressions'
-    const project = findProject(name)
-
+function ProjectDetails(props) {
     return (
-        <main id='project-details'>
-            <h1>{project.title}</h1>
+        <div id='project-details'>
+            <h1>{props.project.title}</h1>
 
-            <p>{project.description}</p>
+            <p>{props.project.description}</p>
 
             <img 
-                src={project.image} 
-                alt={project.title}
+                src={props.project.image} 
+                alt={props.project.title}
             />
 
             <article>
                 <a 
-                    href={project.deploymentLink}
+                    href={props.project.deploymentLink}
                     target='_blank'
                     rel='noreferrer'
                 >
                     <button>
-                        View deployed {project.type}
+                        View deployed {props.project.type}
                     </button>
                 </a>
 
                 <a 
-                    href={project.repositoryLink}
+                    href={props.project.repositoryLink}
                     target='_blank'
                     rel='noreferrer'
                 >
@@ -37,7 +31,7 @@ function ProjectDetails() {
                     </button>
                 </a>
             </article>
-        </main>
+        </div>
     )
 }
 

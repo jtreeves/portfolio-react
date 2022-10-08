@@ -2,13 +2,18 @@ import ProjectPreview from './ProjectPreview'
 
 function ProjectsList(props) {
     const projectCards = props.projects.map((project, index) => {
+        const setter = () => {
+            props.setProject(project)
+            window.scrollTo({ top: 0 })
+        }
+
         return (
-            <li key={index}>
-                <ProjectPreview 
-                    title={project.title}
-                    image={project.image}
-                />
-            </li>
+            <ProjectPreview 
+                key={index}
+                title={project.title}
+                image={project.image}
+                setter={setter}
+            />
         )
     })
 
