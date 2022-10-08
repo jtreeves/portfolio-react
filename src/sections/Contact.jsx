@@ -11,14 +11,12 @@ function Contact() {
     const sendEmail = async (e) => {
         e.preventDefault()
     
-        const result = await emailjs.sendForm(
+        await emailjs.sendForm(
             SERVICE_ID, 
             TEMPLATE_ID, 
             form.current, 
             PUBLIC_KEY
         )
-
-        console.log('RESULT TEXT: ', result.text)
 
         e.target.reset()
     }
