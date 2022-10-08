@@ -2,7 +2,7 @@ import ProjectsList from './ProjectsList'
 import findProjectsByTechnology from '../utilities/findProjectsByTechnology'
 
 function TechnologyDetails(props) {
-    const projects = findProjectsByTechnology()
+    const projects = findProjectsByTechnology(props.technology)
 
     return (
         <div>
@@ -10,6 +10,8 @@ function TechnologyDetails(props) {
 
             <ProjectsList 
                 projects={projects}
+                setProject={props.setProject}
+                setSection={props.setSection}
             />
         </div>
     )

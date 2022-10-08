@@ -4,6 +4,7 @@ function ProjectsList(props) {
     const projectCards = props.projects.map((project, index) => {
         const setter = () => {
             props.setProject(project)
+            props.setSection('projects')
             window.scrollTo({ top: 0 })
         }
 

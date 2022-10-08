@@ -9,11 +9,14 @@ function Projects(props) {
 
             <ProjectDetails 
                 project={props.project}
+                setTechnology={props.setTechnology}
+                setSection={props.setSection}
             />
 
             <ProjectsList 
                 projects={filterOutMainProject(props.project.title)} 
                 setProject={props.setProject}
+                setSection={props.setSection}
             />
         </section>
     )

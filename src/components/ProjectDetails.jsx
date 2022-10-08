@@ -1,3 +1,5 @@
+import TechnologiesList from './TechnologiesList'
+
 function ProjectDetails(props) {
     return (
         <div id='project-details'>
@@ -31,6 +33,12 @@ function ProjectDetails(props) {
                     </button>
                 </a>
             </article>
+
+            <TechnologiesList 
+                technologies={props.project.technologies}
+                setTechnology={props.setTechnology}
+                setSection={props.setSection}
+            />
         </div>
     )
 }

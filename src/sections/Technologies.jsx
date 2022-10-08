@@ -1,21 +1,22 @@
 import TechnologiesList from '../components/TechnologiesList'
 import TechnologyDetails from '../components/TechnologyDetails'
-import listAllTechnologies from '../utilities/listAllTechnologies'
+import filterOutMainTechnology from '../utilities/filterOutMainTechnology'
 
 function Technologies(props) {
-    const technologies = listAllTechnologies()
-
     return (
         <section>
             <h1>Technologies</h1>
 
             <TechnologyDetails 
                 technology={props.technology}
+                setSection={props.setSection}
+                setProject={props.setProject}
             />
 
             <TechnologiesList 
-                technologies={technologies}
+                technologies={filterOutMainTechnology(props.technology)}
                 setTechnology={props.setTechnology}
+                setSection={props.setSection}
             />
         </section>
     )

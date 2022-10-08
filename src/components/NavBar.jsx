@@ -23,6 +23,10 @@ function NavBar(props) {
                 <li onClick={() => props.setSection('projects')}>
                     Projects
                 </li>
+                
+                <li onClick={() => props.setSection('technologies')}>
+                    Technologies
+                </li>
             </ul>
         </nav>
     )
