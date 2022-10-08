@@ -1,3 +1,4 @@
+import FavoritesList from '../components/FavoritesList'
 import about from '../data/about'
 
 function About() {
@@ -23,6 +24,14 @@ function About() {
                     {bio}
                 </article>
             </div>
+
+            <h3>Favorite Books</h3>
+
+            <FavoritesList favorites={about.favorites.books} />
+
+            <h3>Favorite Movies</h3>
+
+            <FavoritesList favorites={about.favorites.movies} />
         </section>
     )
 }
