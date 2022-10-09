@@ -6,7 +6,7 @@ function ProjectPreview(props) {
                 alt={props.title}
             />
 
-            <section>
+            <article>
                 <h3>
                     {props.title}
                 </h3>
@@ -14,7 +14,7 @@ function ProjectPreview(props) {
                 <button onClick={props.setter}>
                     Learn more
                 </button>
-            </section>
+            </article>
         </li>
     )
 }

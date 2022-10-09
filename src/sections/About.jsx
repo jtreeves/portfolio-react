@@ -14,16 +14,14 @@ function About() {
         <section id='about'>
             <h1>About</h1>
 
-            <div>
-                <img 
-                    src={about.casualPhoto} 
-                    alt={about.name}
-                />
+            <img 
+                src={about.casualPhoto} 
+                alt={about.name}
+            />
 
-                <article>
-                    {bio}
-                </article>
-            </div>
+            <article>
+                {bio}
+            </article>
 
             <FavoritesList 
                 favorites={about.favorites.books} 

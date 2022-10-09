@@ -4,10 +4,15 @@ import capitalizeWord from '../utilities/capitalizeWord'
 
 function NavBar(props) {
     const items = sections.map((section, index) => {
+        const handleClick = () => {
+            props.clearProjectAndTechnology()
+            props.setSection(section)
+        }
+
         return (
             <li
                 key={index}
-                onClick={() => props.setSection(section)}
+                onClick={handleClick}
             >
                 {capitalizeWord(section)}
             </li>

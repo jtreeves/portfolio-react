@@ -6,7 +6,9 @@ function TechnologyDetails(props) {
 
     return (
         <div>
-            <h1>{props.technology}</h1>
+            <h2>{props.technology}</h2>
+
+            <p>Products I have built using {props.technology}:</p>
 
             <ProjectsList 
                 projects={projects}

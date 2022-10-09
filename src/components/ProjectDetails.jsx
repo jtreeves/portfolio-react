@@ -11,19 +11,21 @@ function ProjectDetails(props) {
     })
 
     return (
-        <div id='project-details'>
-            <h1>{props.project.title}</h1>
+        <div>
+            <h2>{props.project.title}</h2>
 
             <p>{props.project.description}</p>
-
-            <p>{props.project.inspiration}</p>
 
             <img 
                 src={props.project.image} 
                 alt={props.project.title}
             />
 
+            <p>{props.project.inspiration}</p>
+
             <ul>
+                <h3>Features</h3>
+
                 {features}
             </ul>
 

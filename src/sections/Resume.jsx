@@ -1,5 +1,4 @@
 import resume from '../data/resume'
-import countProjectsUsingTechnology from '../utilities/countProjectsUsingTechnology'
 import formatDate from '../utilities/formatDate'
 
 function Resume() {
@@ -22,9 +21,13 @@ function Resume() {
         )
     })
 
-    const javascriptProjects = countProjectsUsingTechnology('JavaScript')
-    const pythonProjects = countProjectsUsingTechnology('Python')
-    const rubyProjects = countProjectsUsingTechnology('Ruby')
+    const languages = resume.languages.map((language, index) => {
+        return (
+            <li key={index}>
+                {language.name}: {language.count}
+            </li>
+        )
+    })
 
     return (
         <section id='resume'>
@@ -34,32 +37,22 @@ function Resume() {
                 Click the link to download <a href='/Jackson_Reeves_Resume.pdf' download>my resume</a>.
             </p>
 
-            <h2>Experience</h2>
-
             <ul>
+                <h2>Experience</h2>
+
                 {jobs}
             </ul>
 
-            <h2>Reviews</h2>
-
             <ul>
+                <h2>Reviews</h2>
+
                 {feedback}
             </ul>
 
-            <h2>Languages</h2>
-
             <ul>
-                <li>
-                    JavaScript: {javascriptProjects}
-                </li>
-                
-                <li>
-                    Python: {pythonProjects}
-                </li>
-                
-                <li>
-                    Ruby: {rubyProjects}
-                </li>
+                <h2>Languages</h2>
+
+                {languages}
             </ul>
         </section>
     )

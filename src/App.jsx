@@ -6,19 +6,23 @@ import Resume from './sections/Resume'
 import Projects from './sections/Projects'
 import Technologies from './sections/Technologies'
 import NavBar from './components/NavBar'
-import projects from './data/projects'
-import listAllTechnologies from './utilities/listAllTechnologies'
 import './style/main.css'
 
 function App() {
     const [section, setSection] = useState('home')
-    const [project, setProject] = useState(projects[0])
-    const [technology, setTechnology] = useState(listAllTechnologies()[0])
+    const [project, setProject] = useState(null)
+    const [technology, setTechnology] = useState(null)
+
+    const clearProjectAndTechnology = () => {
+        setProject(null)
+        setTechnology(null)
+    }
 
     return (
-        <>
+        <main>
             <NavBar 
                 setSection={setSection} 
+                clearProjectAndTechnology={clearProjectAndTechnology}
             />
 
             {section === 'home' && <Home />}
@@ -43,7 +47,7 @@ function App() {
                     setSection={setSection}
                 />
             }
-        </>
+        </main>
     )
 }
 

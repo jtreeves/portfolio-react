@@ -1,8 +1,10 @@
 function TechnologyPreview(props) {
     return (
-        <button onClick={props.setter}>
-            {props.technology}
-        </button>
+        <li>
+            <button onClick={props.setter}>
+                {props.technology}
+            </button>
+        </li>
     )
 }
 
