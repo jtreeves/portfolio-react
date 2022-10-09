@@ -1,4 +1,5 @@
 import TechnologiesList from './TechnologiesList'
+import formatDate from '../utilities/formatDate'
 
 function ProjectDetails(props) {
     const features = props.project.features.map((feature, index) => {
@@ -26,7 +27,7 @@ function ProjectDetails(props) {
                 {features}
             </ul>
 
-            <span>{props.project.date.toLocaleString('default', { month: 'long' })} {props.project.date.getFullYear()}</span>
+            <span>{formatDate(props.project.date)}</span>
 
             <article>
                 <a 

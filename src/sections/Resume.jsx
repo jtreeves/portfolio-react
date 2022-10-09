@@ -1,10 +1,11 @@
 import resume from '../data/resume'
 import countProjectsUsingTechnology from '../utilities/countProjectsUsingTechnology'
+import formatDate from '../utilities/formatDate'
 
 function Resume() {
     const jobs = resume.jobs.map((job, index) => {
-        const startDate = job.startDate.toLocaleString('default', { month: 'long' }) + ' ' + job.startDate.getFullYear()
-        const endDate = job.endDate ? job.endDate.toLocaleString('default', { month: 'long' }) + ' ' + job.endDate.getFullYear() : 'present'
+        const startDate = formatDate(job.startDate)
+        const endDate = job.endDate ? formatDate(job.endDate) : 'present'
 
         return (
             <li key={index}>
