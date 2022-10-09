@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import emailjs from '@emailjs/browser'
 import contact from '../data/contact'
 import capitalizeWord from '../utilities/capitalizeWord'
@@ -53,7 +54,11 @@ function Contact(props) {
                     target='_blank' 
                     rel='noreferrer'
                 >
-                    {social.name}
+                    <FontAwesomeIcon 
+                        icon={social.icon} 
+                        title={social.name}
+                        size='2x' 
+                    />
                 </a>
             </li>
         )
@@ -73,9 +78,9 @@ function Contact(props) {
                 <button type='submit'>Submit</button>
             </form>
 
-            <ul>
-                <h2>Social Media</h2>
+            <h2>Social Media</h2>
 
+            <ul>
                 {socialMedia}
             </ul>
         </section>
