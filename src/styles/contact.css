@@ -15,6 +15,8 @@ form {
     border: 3px solid #06063f;
     border-radius: 3px;
     gap: 20px;
+    padding: 20px;
+    width: 50%;
 }
 
 form div {
@@ -25,6 +27,15 @@ form div {
 
 label {
     text-transform: uppercase;
+}
+
+input, textarea {
+    border: 1px solid #06063f;
+    border-radius: 1px;
+}
+
+textarea {
+    height: 100px;
 }
 
 form article {

@@ -15,24 +15,28 @@ function About(props) {
         <section id='about' ref={props.domNode}>
             <h1>About</h1>
 
-            <img 
-                src={about.casualPhoto} 
-                alt={about.name}
-            />
+            <div id='about-content'>
+                <img 
+                    src={about.casualPhoto} 
+                    alt={about.name}
+                />
 
-            <article>
-                {bio}
-            </article>
+                <article>
+                    <div>
+                        {bio}
+                    </div>
 
-            <FavoritesList 
-                favorites={about.favorites.books} 
-                type='books' 
-            />
+                    <FavoritesList 
+                        favorites={about.favorites.books} 
+                        type='books' 
+                    />
 
-            <FavoritesList 
-                favorites={about.favorites.movies} 
-                type='movies' 
-            />
+                    <FavoritesList 
+                        favorites={about.favorites.movies} 
+                        type='movies' 
+                    />
+                </article>
+            </div>
         </section>
     )
 }

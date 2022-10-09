@@ -18,7 +18,7 @@ function TechnologiesList(props) {
     })
 
     return (
-        <ul>
+        <ul id='technologies-list'>
             {technologyCards}
         </ul>
     )

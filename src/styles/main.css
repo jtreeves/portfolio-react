@@ -13,7 +13,7 @@ body {
     height: 100vh;
 }
 
-h1, h2, h3, nav, label {
+h1, h2, h3, nav, label, button {
     font-family: Montserrat, sans-serif;
 }
 
@@ -79,4 +79,15 @@ h2 {
 
 h3 {
     font-size: large;
+}
+
+button {
+    display: flex;
+    align-self: center;
+    background-color: #06063f;
+    border: 3px solid #06063f;
+    border-radius: 3px;
+    color: #ebf2f4;
+    cursor: pointer;
+    padding: 5px 10px;
 }

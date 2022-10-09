@@ -68,19 +68,17 @@ function Contact(props) {
         <section id='contact' ref={props.domNode}>
             <h1>Contact</h1>
 
-            <form ref={form} onSubmit={handleSubmit}>
-                <p>
-                    If you'd like collaborate on an interesting project or just chat code, feel free to hit me up:
-                </p>
+            <p>
+                If you'd like to collaborate on an interesting project or just chat code, feel free to hit me up, either on social media or via this form.
+            </p>
 
+            <form ref={form} onSubmit={handleSubmit}>
                 <div>
                     {formFields}
                 </div>
 
                 <button type='submit'>Submit</button>
             </form>
-
-            <h2>Social Media</h2>
 
             <ul>
                 {socialMedia}

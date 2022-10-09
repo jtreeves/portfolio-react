@@ -1,0 +1,10 @@
+#resume a {
+    text-decoration: none;
+    color: #06063f;
+    font-weight: bold;
+}
+
+#resume a:hover {
+    font-style: italic;
+    text-decoration: underline;
+}

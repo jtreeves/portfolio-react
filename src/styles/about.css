@@ -1,0 +1,28 @@
+#about img {
+    width: 400px;
+    border-radius: 100%;
+    border: 5px solid #06063f;
+}
+
+#about-content {
+    display: flex;
+    gap: 50px;
+}
+
+#about article {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#about ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#about article div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
