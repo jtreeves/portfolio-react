@@ -7,7 +7,7 @@ function Technologies(props) {
     const technologies = props.technology ? filterOutMainTechnology(props.technology) : listAllTechnologies()
 
     return (
-        <section id='technologies'>
+        <section id='technologies' ref={props.active}>
             <h1>Technologies</h1>
 
             {props.technology && <TechnologyDetails 

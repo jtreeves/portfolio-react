@@ -1,9 +1,9 @@
 import about from '../data/about'
 import '../styles/home.css'
 
-function Home() {
+function Home(props) {
     return (
-        <section id='home'>
+        <section id='home' ref={props.active}>
             <h1>{about.name}</h1>
 
             <img 

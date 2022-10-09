@@ -2,7 +2,7 @@ import FavoritesList from '../components/FavoritesList'
 import about from '../data/about'
 import '../styles/about.css'
 
-function About() {
+function About(props) {
     const bio = about.bio.map((paragraph, index) => {
         return (
             <p key={index}>
@@ -12,7 +12,7 @@ function About() {
     })
 
     return (
-        <section id='about'>
+        <section id='about' ref={props.active}>
             <h1>About</h1>
 
             <img 

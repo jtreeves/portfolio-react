@@ -8,7 +8,7 @@ const SERVICE_ID = process.env.REACT_APP_SERVICE_ID
 const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID
 const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY
 
-function Contact() {
+function Contact(props) {
     const form = useRef()
 
     const handleSubmit = async (e) => {
@@ -60,7 +60,7 @@ function Contact() {
     })
 
     return (
-        <section id='contact'>
+        <section id='contact' ref={props.active}>
             <h1>Contact</h1>
 
             <form ref={form} onSubmit={handleSubmit}>

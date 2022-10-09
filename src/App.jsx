@@ -6,9 +6,9 @@ import Resume from './sections/Resume'
 import Projects from './sections/Projects'
 import Technologies from './sections/Technologies'
 import NavBar from './components/NavBar'
-import './styles/main.css'
 import findNextSection from './utilities/findNextSection'
 import findPreviousSection from './utilities/findPreviousSection'
+import './styles/main.css'
 
 function App() {
     const [section, setSection] = useState('home')
@@ -23,6 +23,8 @@ function App() {
 
     useEffect(() => {
         const onScroll = () => {
+            console.log('ACTIVE', active.current)
+            console.log('HEIGHT', active.current.scrollHeight)
             const scrollY = window.scrollY
             const innerHeight = window.innerHeight
             const scrollHeight = active.current.scrollHeight
@@ -43,19 +45,20 @@ function App() {
     }, [active, section])
 
     return (
-        <div ref={active}>
+        <>
             <NavBar 
                 setSection={setSection} 
                 clearProjectAndTechnology={clearProjectAndTechnology}
             />
 
-            {section === 'home' && <Home />}
-            {section === 'about' && <About />}
-            {section === 'contact' && <Contact />}
-            {section === 'resume' && <Resume />}
+            {section === 'home' && <Home active={active} />}
+            {section === 'about' && <About active={active} />}
+            {section === 'contact' && <Contact active={active} />}
+            {section === 'resume' && <Resume active={active} />}
 
             {section === 'projects' && 
                 <Projects 
+                    active={active}
                     project={project}
                     setProject={setProject}
                     setTechnology={setTechnology}
@@ -65,13 +68,14 @@ function App() {
 
             {section === 'technologies' && 
                 <Technologies 
+                    active={active}
                     technology={technology}
                     setTechnology={setTechnology} 
                     setProject={setProject}
                     setSection={setSection}
                 />
             }
-        </div>
+        </>
     )
 }
 

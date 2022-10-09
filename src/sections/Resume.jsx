@@ -2,7 +2,7 @@ import resume from '../data/resume'
 import formatDate from '../utilities/formatDate'
 import '../styles/resume.css'
 
-function Resume() {
+function Resume(props) {
     const jobs = resume.jobs.map((job, index) => {
         const startDate = formatDate(job.startDate)
         const endDate = job.endDate ? formatDate(job.endDate) : 'present'
@@ -31,7 +31,7 @@ function Resume() {
     })
 
     return (
-        <section id='resume'>
+        <section id='resume' ref={props.active}>
             <h1>Resume</h1>
 
             <p>
