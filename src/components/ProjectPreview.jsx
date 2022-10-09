@@ -1,3 +1,5 @@
+import '../styles/projects.css'
+
 function ProjectPreview(props) {
     return (
         <li>

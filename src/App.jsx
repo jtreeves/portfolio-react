@@ -6,7 +6,7 @@ import Resume from './sections/Resume'
 import Projects from './sections/Projects'
 import Technologies from './sections/Technologies'
 import NavBar from './components/NavBar'
-import './style/main.css'
+import './styles/main.css'
 
 function App() {
     const [section, setSection] = useState('home')

@@ -1,5 +1,6 @@
 import TechnologiesList from './TechnologiesList'
 import formatDate from '../utilities/formatDate'
+import '../styles/projects.css'
 
 function ProjectDetails(props) {
     const features = props.project.features.map((feature, index) => {

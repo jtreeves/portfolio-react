@@ -1,3 +1,5 @@
+import '../styles/technologies.css'
+
 function TechnologyPreview(props) {
     return (
         <li>

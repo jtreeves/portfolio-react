@@ -1,4 +1,5 @@
 import about from '../data/about'
+import '../styles/home.css'
 
 function Home() {
     return (

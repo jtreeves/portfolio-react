@@ -1,4 +1,5 @@
 import ProjectPreview from './ProjectPreview'
+import '../styles/projects.css'
 
 function ProjectsList(props) {
     const projectCards = props.projects.map((project, index) => {

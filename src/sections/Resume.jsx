@@ -1,5 +1,6 @@
 import resume from '../data/resume'
 import formatDate from '../utilities/formatDate'
+import '../styles/resume.css'
 
 function Resume() {
     const jobs = resume.jobs.map((job, index) => {

@@ -1,5 +1,6 @@
 import FavoritesList from '../components/FavoritesList'
 import about from '../data/about'
+import '../styles/about.css'
 
 function About() {
     const bio = about.bio.map((paragraph, index) => {

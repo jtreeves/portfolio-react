@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import contact from '../data/contact'
 import capitalizeWord from '../utilities/capitalizeWord'
+import '../styles/contact.css'
 
 const SERVICE_ID = process.env.REACT_APP_SERVICE_ID
 const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID

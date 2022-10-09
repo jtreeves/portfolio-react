@@ -1,5 +1,6 @@
 import ProjectsList from './ProjectsList'
 import findProjectsByTechnology from '../utilities/findProjectsByTechnology'
+import '../styles/technologies.css'
 
 function TechnologyDetails(props) {
     const projects = findProjectsByTechnology(props.technology)
