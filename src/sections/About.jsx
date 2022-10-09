@@ -25,13 +25,15 @@ function About() {
                 </article>
             </div>
 
-            <h3>Favorite Books</h3>
+            <FavoritesList 
+                favorites={about.favorites.books} 
+                type='books' 
+            />
 
-            <FavoritesList favorites={about.favorites.books} />
-
-            <h3>Favorite Movies</h3>
-
-            <FavoritesList favorites={about.favorites.movies} />
+            <FavoritesList 
+                favorites={about.favorites.movies} 
+                type='movies' 
+            />
         </section>
     )
 }

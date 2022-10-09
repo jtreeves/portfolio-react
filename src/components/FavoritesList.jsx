@@ -1,4 +1,7 @@
+import capitalizeWord from '../utilities/capitalizeWord'
+
 function FavoritesList(props) {
+    const heading = `Favorite ${capitalizeWord(props.type)}`
     const list = props.favorites.map((favorite, index) => {
         return (
             <li key={index}>
@@ -9,6 +12,8 @@ function FavoritesList(props) {
 
     return (
         <ul>
+            <h2>{heading}</h2>
+
             {list}
         </ul>
     )

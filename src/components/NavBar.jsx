@@ -1,32 +1,27 @@
-import person from '../data/about'
+import sections from '../data/sections'
+import about from '../data/about'
+import capitalizeWord from '../utilities/capitalizeWord'
 
 function NavBar(props) {
+    const items = sections.map((section, index) => {
+        return (
+            <li
+                key={index}
+                onClick={() => props.setSection(section)}
+            >
+                {capitalizeWord(section)}
+            </li>
+        )
+    })
+
     return (
         <nav>
             <span onClick={() => props.setSection('home')}>
-                {person.name}
+                {about.name}
             </span>
 
             <ul>
-                <li onClick={() => props.setSection('about')}>
-                    About
-                </li>
-                
-                <li onClick={() => props.setSection('contact')}>
-                    Contact
-                </li>
-                
-                <li onClick={() => props.setSection('resume')}>
-                    Resume
-                </li>
-                
-                <li onClick={() => props.setSection('projects')}>
-                    Projects
-                </li>
-                
-                <li onClick={() => props.setSection('technologies')}>
-                    Technologies
-                </li>
+                {items}
             </ul>
         </nav>
     )

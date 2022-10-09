@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
+import socials from '../data/socials'
 
 const SERVICE_ID = process.env.REACT_APP_SERVICE_ID
 const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID
@@ -21,6 +22,20 @@ function Contact() {
         e.target.reset()
     }
 
+    const socialMedia = socials.map((social, index) => {
+        return (
+            <li key={index}>
+                <a 
+                    href={social.link} 
+                    target='_blank' 
+                    rel='noreferrer'
+                >
+                    {social.name}
+                </a>
+            </li>
+        )
+    })
+
     return (
         <section id='contact'>
             <h1>Contact</h1>
@@ -41,46 +56,9 @@ function Contact() {
 
             <article>
                 Reach out to me on social media!
+                
                 <ul>
-                    <li>
-                        <a 
-                            href='https://www.linkedin.com/in/jacksonreeves/' 
-                            target='_blank' 
-                            rel='noreferrer'
-                        >
-                            LinkedIn
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a 
-                            href='https://github.com/jtreeves' 
-                            target='_blank' 
-                            rel='noreferrer'
-                        >
-                            GitHub
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a 
-                            href='https://twitter.com/JTReeves' 
-                            target='_blank' 
-                            rel='noreferrer'
-                        >
-                            Twitter
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a 
-                            href='https://jacksonreeves.tumblr.com' 
-                            target='_blank' 
-                            rel='noreferrer'
-                        >
-                            Tumblr
-                        </a>
-                    </li>
+                    {socialMedia}
                 </ul>
             </article>
         </section>
