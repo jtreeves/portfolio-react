@@ -73,7 +73,9 @@ function Contact(props) {
                     If you'd like collaborate on an interesting project or just chat code, feel free to hit me up:
                 </p>
 
-                {formFields}
+                <div>
+                    {formFields}
+                </div>
 
                 <button type='submit'>Submit</button>
             </form>

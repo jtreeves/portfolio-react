@@ -58,10 +58,21 @@ function App() {
                 clearProjectAndTechnology={clearProjectAndTechnology}
             />
 
-            {section === 'home' && <Home domNode={domNode} />}
-            {section === 'about' && <About domNode={domNode} />}
-            {section === 'contact' && <Contact domNode={domNode} />}
-            {section === 'resume' && <Resume domNode={domNode} />}
+            {section === 'home' && 
+                <Home domNode={domNode} />
+            }
+
+            {section === 'about' && 
+                <About domNode={domNode} />
+            }
+
+            {section === 'contact' && 
+                <Contact domNode={domNode} />
+            }
+
+            {section === 'resume' && 
+                <Resume domNode={domNode} />
+            }
 
             {section === 'projects' && 
                 <Projects 

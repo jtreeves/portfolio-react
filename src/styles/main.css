@@ -13,7 +13,7 @@ body {
     height: 100vh;
 }
 
-h1, h2, h3, nav {
+h1, h2, h3, nav, label {
     font-family: Montserrat, sans-serif;
 }
 
