@@ -1,0 +1,41 @@
+#projects-list {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.project-preview {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border: 3px solid #06063f;
+    border-radius: 3px;
+}
+
+.project-preview img {
+    width: 300px;
+}
+
+.project-preview h3 {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-preview:hover {
+    cursor: pointer;
+}
+
+.project-preview:hover img {
+    opacity: 0.5;
+}
+
+.project-preview:hover h3 {
+    opacity: 1;
+}

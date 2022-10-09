@@ -36,12 +36,12 @@ function App() {
             const innerHeight = window.innerHeight
             const nodeHeight = domNode.current.scrollHeight
 
-            if (scrollY + innerHeight > nodeHeight && scrollY > 0 && !waiting.current) {
+            if (scrollY + innerHeight > nodeHeight + 50 && scrollY > 0 && !waiting.current) {
                 setSection(findNextSection(section))
                 reset()
             }
             
-            if (scrollY < 0 && !waiting.current) {
+            if (scrollY < -50 && !waiting.current) {
                 setSection(findPreviousSection(section))
                 reset()
             }

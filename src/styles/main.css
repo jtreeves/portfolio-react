@@ -64,10 +64,6 @@ section {
     padding: 50px;
 }
 
-img {
-    width: 300px;
-}
-
 h1, h2, h3 {
     font-weight: 700;
     text-transform: uppercase;

@@ -2,21 +2,19 @@ import '../styles/projects.css'
 
 function ProjectPreview(props) {
     return (
-        <li>
+        <li 
+            onClick={props.setter}
+            className='project-preview'
+            title='Click to learn more about this project'
+        >
             <img 
                 src={props.image} 
                 alt={props.title}
             />
 
-            <article>
-                <h3>
-                    {props.title}
-                </h3>
-
-                <button onClick={props.setter}>
-                    Learn more
-                </button>
-            </article>
+            <h3>
+                {props.title}
+            </h3>
         </li>
     )
 }

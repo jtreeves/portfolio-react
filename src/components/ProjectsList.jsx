@@ -20,7 +20,7 @@ function ProjectsList(props) {
     })
 
     return (
-        <ul>
+        <ul id='projects-list'>
             {projectCards}
         </ul>
     )
