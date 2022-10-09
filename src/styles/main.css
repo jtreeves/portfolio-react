@@ -9,8 +9,12 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #ebf2f4;
-    font-family: Montserrat, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     height: 100vh;
+}
+
+h1, h2, h3, nav {
+    font-family: Montserrat, sans-serif;
 }
 
 ul {
