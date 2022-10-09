@@ -7,6 +7,8 @@ import Projects from './sections/Projects'
 import Technologies from './sections/Technologies'
 import NavBar from './components/NavBar'
 import './styles/main.css'
+import findNextSection from './utilities/findNextSection'
+import findPreviousSection from './utilities/findPreviousSection'
 
 function App() {
     const [section, setSection] = useState('home')
@@ -26,19 +28,19 @@ function App() {
             const scrollHeight = active.current.scrollHeight
 
             if (scrollY + innerHeight > scrollHeight && scrollY > 0) {
-                setSection('about')
+                setSection(findNextSection(section))
                 window.scrollTo({ top: 0 })
             }
             
             if (scrollY < 0) {
-                setSection('home')
+                setSection(findPreviousSection(section))
                 window.scrollTo({ top: 0 })
             }
         }
 
         window.addEventListener('scroll', onScroll)
         return () => window.removeEventListener('scroll', onScroll)
-    }, [active])
+    }, [active, section])
 
     return (
         <div ref={active}>
