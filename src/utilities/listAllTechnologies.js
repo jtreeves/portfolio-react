@@ -7,6 +7,7 @@ function listAllTechnologies() {
     const technologiesArray = technologyArrays.flat()
     const uniqueTechnologies = [...new Set(technologiesArray)]
     const sortedTechnologies = uniqueTechnologies.sort()
+    
     return sortedTechnologies
 }
 
