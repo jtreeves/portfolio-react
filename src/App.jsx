@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Home from './sections/Home'
 import About from './sections/About'
 import Contact from './sections/Contact'
@@ -12,14 +12,36 @@ function App() {
     const [section, setSection] = useState('home')
     const [project, setProject] = useState(null)
     const [technology, setTechnology] = useState(null)
+    const active = useRef(null)
 
     const clearProjectAndTechnology = () => {
         setProject(null)
         setTechnology(null)
     }
 
+    useEffect(() => {
+        const onScroll = () => {
+            const scrollY = window.scrollY
+            const innerHeight = window.innerHeight
+            const scrollHeight = active.current.scrollHeight
+
+            if (scrollY + innerHeight > scrollHeight && scrollY > 0) {
+                setSection('about')
+                window.scrollTo({ top: 0 })
+            }
+            
+            if (scrollY < 0) {
+                setSection('home')
+                window.scrollTo({ top: 0 })
+            }
+        }
+
+        window.addEventListener('scroll', onScroll)
+        return () => window.removeEventListener('scroll', onScroll)
+    }, [active])
+
     return (
-        <>
+        <div ref={active}>
             <NavBar 
                 setSection={setSection} 
                 clearProjectAndTechnology={clearProjectAndTechnology}
@@ -47,7 +69,7 @@ function App() {
                     setSection={setSection}
                 />
             }
-        </>
+        </div>
     )
 }
 
