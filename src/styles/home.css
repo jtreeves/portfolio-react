@@ -3,3 +3,7 @@
     border-radius: 100%;
     border: 5px solid #06063f;
 }
+
+#home p {
+    font-style: italic;
+}

@@ -1,11 +1,18 @@
 import sections from '../data/sections'
 
-function findPreviousSection(currentSection) {
-    const currentIndex = sections.indexOf(currentSection)
+function findPreviousSection(currentSectionName) {
+    let currentIndex = -1
+
+    sections.forEach((section, index) => {
+        if (section.name === currentSectionName) {
+            currentIndex = index
+        }
+    })
+
     const previousIndex = currentIndex - 1
 
     if (previousIndex >= 0) {
-        return sections[previousIndex]
+        return sections[previousIndex].name
     } else {
         return 'home'
     }
