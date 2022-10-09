@@ -26,9 +26,13 @@ function NavBar(props) {
 
     return (
         <nav>
-            <span onClick={() => props.setSection('home')}>
-                {about.name}
-            </span>
+            <div onClick={() => props.setSection('home')}>
+                <img src='/logo192.png' alt={about.name} />
+
+                <span>
+                    {about.name}
+                </span>
+            </div>
 
             <ul>
                 {items}

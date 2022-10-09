@@ -1,9 +1,9 @@
-import { faBriefcase, faComment, faPaperPlane, faFileAlt, faToolbox } from '@fortawesome/free-solid-svg-icons'
+import { faBriefcase, faPaperPlane, faFileAlt, faPortrait, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
 
 const sections = [
     {
         name: 'about',
-        icon: faComment
+        icon: faPortrait
     },
     {
         name: 'contact',
@@ -19,7 +19,7 @@ const sections = [
     },
     {
         name: 'technologies',
-        icon: faToolbox
+        icon: faLaptopCode
     }
 ]
 

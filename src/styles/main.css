@@ -43,9 +43,17 @@ nav ul li {
     cursor: pointer;
 }
 
-nav span {
+nav div {
     cursor: pointer;
     font-weight: 700;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav div img {
+    width: 20px;
+    border-radius: 100%;
 }
 
 section {
