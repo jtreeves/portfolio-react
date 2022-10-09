@@ -19,7 +19,7 @@ function App() {
     }
 
     return (
-        <main>
+        <>
             <NavBar 
                 setSection={setSection} 
                 clearProjectAndTechnology={clearProjectAndTechnology}
@@ -47,7 +47,7 @@ function App() {
                     setSection={setSection}
                 />
             }
-        </main>
+        </>
     )
 }
 

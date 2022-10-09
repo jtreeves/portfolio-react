@@ -6,13 +6,13 @@ function Home() {
         <section id='home'>
             <h1>{about.name}</h1>
 
-            <h2>{about.title}</h2>
-
             <img 
                 src={about.professionalPhoto} 
                 alt={about.name}
             />
 
+            <h2>{about.title}</h2>
+            
             <p>{about.tagline}</p>
         </section>
     )
