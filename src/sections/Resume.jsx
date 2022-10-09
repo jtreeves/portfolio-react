@@ -31,7 +31,7 @@ function Resume(props) {
     })
 
     return (
-        <section id='resume' ref={props.active}>
+        <section id='resume' ref={props.domNode}>
             <h1>Resume</h1>
 
             <p>

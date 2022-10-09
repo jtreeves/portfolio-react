@@ -14,35 +14,42 @@ function App() {
     const [section, setSection] = useState('home')
     const [project, setProject] = useState(null)
     const [technology, setTechnology] = useState(null)
-    const active = useRef(null)
+    const domNode = useRef(null)
+    const waiting = useRef(false)
 
     const clearProjectAndTechnology = () => {
         setProject(null)
         setTechnology(null)
     }
 
+    const reset = () => {
+        window.scrollTo({ top: 0 })
+        waiting.current = true
+        setTimeout(() => {
+            waiting.current = false
+        }, 2000)
+    }
+
     useEffect(() => {
         const onScroll = () => {
-            console.log('ACTIVE', active.current)
-            console.log('HEIGHT', active.current.scrollHeight)
             const scrollY = window.scrollY
             const innerHeight = window.innerHeight
-            const scrollHeight = active.current.scrollHeight
+            const nodeHeight = domNode.current.scrollHeight
 
-            if (scrollY + innerHeight > scrollHeight && scrollY > 0) {
+            if (scrollY + innerHeight > nodeHeight && scrollY > 0 && !waiting.current) {
                 setSection(findNextSection(section))
-                window.scrollTo({ top: 0 })
+                reset()
             }
             
-            if (scrollY < 0) {
+            if (scrollY < 0 && !waiting.current) {
                 setSection(findPreviousSection(section))
-                window.scrollTo({ top: 0 })
+                reset()
             }
         }
 
         window.addEventListener('scroll', onScroll)
         return () => window.removeEventListener('scroll', onScroll)
-    }, [active, section])
+    }, [domNode, waiting, section])
 
     return (
         <>
@@ -51,14 +58,14 @@ function App() {
                 clearProjectAndTechnology={clearProjectAndTechnology}
             />
 
-            {section === 'home' && <Home active={active} />}
-            {section === 'about' && <About active={active} />}
-            {section === 'contact' && <Contact active={active} />}
-            {section === 'resume' && <Resume active={active} />}
+            {section === 'home' && <Home domNode={domNode} />}
+            {section === 'about' && <About domNode={domNode} />}
+            {section === 'contact' && <Contact domNode={domNode} />}
+            {section === 'resume' && <Resume domNode={domNode} />}
 
             {section === 'projects' && 
                 <Projects 
-                    active={active}
+                    domNode={domNode}
                     project={project}
                     setProject={setProject}
                     setTechnology={setTechnology}
@@ -68,7 +75,7 @@ function App() {
 
             {section === 'technologies' && 
                 <Technologies 
-                    active={active}
+                    domNode={domNode}
                     technology={technology}
                     setTechnology={setTechnology} 
                     setProject={setProject}

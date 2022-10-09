@@ -60,7 +60,7 @@ function Contact(props) {
     })
 
     return (
-        <section id='contact' ref={props.active}>
+        <section id='contact' ref={props.domNode}>
             <h1>Contact</h1>
 
             <form ref={form} onSubmit={handleSubmit}>

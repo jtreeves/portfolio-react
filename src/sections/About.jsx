@@ -12,7 +12,7 @@ function About(props) {
     })
 
     return (
-        <section id='about' ref={props.active}>
+        <section id='about' ref={props.domNode}>
             <h1>About</h1>
 
             <img 
