@@ -1,3 +1,4 @@
+import colors from './colors'
 import countProjectsUsingTechnology from '../utilities/countProjectsUsingTechnology'
 
 const resume = {
@@ -5,14 +6,14 @@ const resume = {
         {
             position: 'Software Engineer',
             company: 'Slalom Build',
-            category: 'development',
+            category: 'software',
             startDate: new Date('June 20, 2022'),
             endDate: null
         },
         {
             position: 'Salesforce Developer',
             company: 'Slalom',
-            category: 'development',
+            category: 'software',
             startDate: new Date('June 27, 2021'),
             endDate: new Date('June 20, 2022')
         },
@@ -33,7 +34,7 @@ const resume = {
         {
             position: 'Digital Media Producer',
             company: 'Atlanta Magazine',
-            category: 'journalism',
+            category: 'software',
             startDate: new Date('April 1, 2011'),
             endDate: new Date('September 1, 2013')
         },
@@ -76,18 +77,44 @@ const resume = {
         {
             name: 'JavaScript',
             projects: countProjectsUsingTechnology('JavaScript'),
-            color: '#7851A9'
+            color: colors[0]
         },
         {
             name: 'Python',
             projects: countProjectsUsingTechnology('Python'),
-            color: '#6CBB3C'
+            color: colors[1]
         },
         {
             name: 'Ruby',
             projects: countProjectsUsingTechnology('Ruby'),
-            color: '#9B111E'
+            color: colors[2]
         }
+    ],
+    skills: [
+        {
+            name: 'Consulting',
+            value: 1
+        },
+        {
+            name: 'Teamwork',
+            value: 3
+        },
+        {
+            name: 'Velocity',
+            value: 2
+        },
+        {
+            name: 'Communication',
+            value: 3
+        },
+        {
+            name: 'Leadership',
+            value: 4
+        },
+        {
+            name: 'Analysis',
+            value: 5
+        },
     ]
 }
 

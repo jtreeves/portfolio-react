@@ -1,7 +1,7 @@
 function calculateDuration(startDate, endDate) {
-    const present = !endDate
+    const endExists = !!endDate
     const now = new Date()
-    const verifiedEndDate = !present ? endDate : now
+    const verifiedEndDate = endExists ? endDate : now
     const duration = verifiedEndDate - startDate
 
     return duration

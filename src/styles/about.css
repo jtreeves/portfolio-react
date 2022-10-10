@@ -33,3 +33,25 @@
     flex-direction: column;
     gap: 5px;
 }
+
+@media only screen and (max-width: 1000px) {
+    #about-content {
+        flex-direction: column-reverse;
+        gap: 30px;
+        align-items: center;
+    }
+
+    #about h2 {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #about img {
+        width: 200px;
+    }
+
+    #about {
+        padding: 25px 50px;
+    }
+}

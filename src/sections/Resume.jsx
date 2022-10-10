@@ -1,30 +1,39 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFilePdf } from '@fortawesome/free-solid-svg-icons'
 import LanguagesChart from '../components/LanguagesChart'
-import ExperienceChart from '../components/ExperienceChart'
+import IndustriesChart from '../components/IndustriesChart'
 import '../styles/resume.css'
+import SkillsChart from '../components/SkillsChart'
+import resume from '../data/resume'
+import Feedback from '../components/Feedback'
 
 function Resume(props) {
+    const feedback = resume.feedback.map((item, index) => {
+        return (
+            <Feedback 
+                key={index}
+                quote={item.quote}
+                name={item.name}
+                company={item.company}
+            />
+        )
+    })
+
     return (
         <section id='resume' ref={props.domNode}>
             <h1>Resume</h1>
 
+            <p>If you'd like to learn more about my work, feel free to <a href='/Jackson_Reeves_Resume.pdf' download>download my resume</a>, check out some graphical analyses of my experiences, or read some reviews from fellow developers.</p>
+
             <article>
                 <LanguagesChart />
 
-                <ExperienceChart />
+                <IndustriesChart />
+
+                <SkillsChart />
             </article>
+
+            <h2>Reviews</h2>
             
-            <a 
-                href='/Jackson_Reeves_Resume.pdf' 
-                download
-            >
-                <FontAwesomeIcon 
-                    icon={faFilePdf} 
-                    size='10x' 
-                    title='Download my resume'
-                />
-            </a>
+            {feedback}
         </section>
     )
 }

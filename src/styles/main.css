@@ -13,7 +13,7 @@ body {
     height: 100vh;
 }
 
-h1, h2, h3, nav, label, button {
+h1, h2, h3, nav, label, button, .link-button {
     font-family: Montserrat, sans-serif;
 }
 
@@ -78,10 +78,10 @@ h2 {
 }
 
 h3 {
-    font-size: large;
+    font-size: small;
 }
 
-button {
+button, .link-button {
     display: flex;
     align-self: center;
     background-color: #06063f;
@@ -90,4 +90,27 @@ button {
     color: #ebf2f4;
     cursor: pointer;
     padding: 5px 10px;
+    font-size: small;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 450px) {
+    nav div span {
+        display: none;
+    }
+
+    h1 {
+        font-size: x-large;
+    }
+
+    h2 {
+        font-size: large;
+    }
+
+    section {
+        padding: 25px 50px;
+    }
 }

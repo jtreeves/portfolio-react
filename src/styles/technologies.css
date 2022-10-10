@@ -4,3 +4,15 @@
     gap: 10px;
     justify-content: center;
 }
+
+#technology-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+#technology-details p {
+    font-style: italic;
+    text-align: center;
+}

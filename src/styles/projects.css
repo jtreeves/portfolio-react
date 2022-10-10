@@ -17,7 +17,7 @@
     width: 300px;
 }
 
-.project-preview h3 {
+.project-preview h2 {
     position: absolute;
     top: 0;
     height: 100%;
@@ -37,23 +37,83 @@
     opacity: 0.5;
 }
 
-.project-preview:hover h3 {
+.project-preview:hover h2 {
     opacity: 1;
 }
 
 #project-details {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
 }
 
 #project-details img {
-    width: 300px;
+    width: 400px;
+    border: 3px solid #06063f;
+    border-radius: 3px;
 }
 
-#project-details div {
+#project-details article {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#project-features, #project-inspiration, #project-links, #project-technologies {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#project-description, #project-date {
+    font-style: italic;
+}
+
+#features {
+    display: flex;
+    flex-direction: column;
+    list-style-type: disc;
+    padding-left: 40px;
+}
+
+#project-date {
+    text-align: right;
+}
+
+#projects #technologies-list {
+    justify-content: flex-start;
+}
+
+#link-buttons {
     display: flex;
     flex-direction: row;
-    gap: 100px;
+    gap: 15px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .project-preview {
+        width: 200px;
+        height: 200px;
+    }
+
+    .project-preview img {
+        width: 200px;
+    }
+
+    #project-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #project-details h2, #project-description {
+        align-self: center;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #project-details img {
+        width: 300px;
+    }
 }

@@ -16,6 +16,8 @@ function Technologies(props) {
                 setProject={props.setProject}
             />}
 
+            {props.technology && <h2>Other Technologies</h2>}
+
             <TechnologiesList 
                 technologies={technologies}
                 setTechnology={props.setTechnology}
