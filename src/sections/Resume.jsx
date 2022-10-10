@@ -18,7 +18,7 @@ function Resume(props) {
     })
 
     return (
-        <section id='resume' ref={props.domNode}>
+        <section id='resume'>
             <h1>Resume</h1>
 
             <p>If you'd like to learn more about my work, feel free to <a href='/Jackson_Reeves_Resume.pdf' download>download my resume</a>, check out some graphical analyses of my experiences, or read some reviews from fellow developers.</p>

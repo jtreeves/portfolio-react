@@ -65,7 +65,7 @@ function Contact(props) {
     })
 
     return (
-        <section id='contact' ref={props.domNode}>
+        <section id='contact'>
             <h1>Contact</h1>
 
             <p>

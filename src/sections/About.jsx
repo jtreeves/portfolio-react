@@ -12,7 +12,7 @@ function About(props) {
     })
 
     return (
-        <section id='about' ref={props.domNode}>
+        <section id='about'>
             <h1>About</h1>
 
             <div id='about-content'>

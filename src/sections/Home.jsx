@@ -3,7 +3,7 @@ import '../styles/home.css'
 
 function Home(props) {
     return (
-        <section id='home' ref={props.domNode}>
+        <section id='home'>
             <h1>{about.name}</h1>
 
             <img 

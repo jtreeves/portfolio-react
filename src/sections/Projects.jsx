@@ -7,7 +7,7 @@ function Projects(props) {
     const projects = props.project ? filterOutMainProject(props.project.title) : allProjects
 
     return (
-        <section id='projects' ref={props.domNode}>
+        <section id='projects'>
             <h1>Projects</h1>
 
             {props.project && <ProjectDetails 
