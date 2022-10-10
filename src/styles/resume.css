@@ -14,6 +14,10 @@
     gap: 20px;
 }
 
+#resume p {
+    text-align: center;
+}
+
 .chart {
     display: flex;
     flex-direction: column;
@@ -39,5 +43,11 @@ blockquote {
 @media only screen and (max-width: 1000px) {
     #resume article {
         flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    blockquote {
+        padding: 0;
     }
 }

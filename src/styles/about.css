@@ -54,4 +54,12 @@
     #about {
         padding: 25px 50px;
     }
+
+    #about p {
+        text-align: center;
+    }
+
+    #about ul {
+        padding-left: 10px;
+    }
 }
