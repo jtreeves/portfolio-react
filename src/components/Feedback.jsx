@@ -3,7 +3,7 @@ function Feedback(props) {
         <div>
             <blockquote>{props.quote}</blockquote>
 
-            <p className='attribution'>— {props.name} <i>({props.company})</i></p>
+            <span className='attribution'>— {props.name} <i>({props.company})</i></span>
         </div>
     )
 }
