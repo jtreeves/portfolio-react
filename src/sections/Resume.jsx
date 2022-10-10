@@ -1,3 +1,4 @@
+import LanguagesChart from '../components/LanguagesChart'
 import resume from '../data/resume'
 import formatDate from '../utilities/formatDate'
 import '../styles/resume.css'
@@ -22,14 +23,6 @@ function Resume(props) {
         )
     })
 
-    const languages = resume.languages.map((language, index) => {
-        return (
-            <li key={index}>
-                {language.name}: {language.count}
-            </li>
-        )
-    })
-
     return (
         <section id='resume' ref={props.domNode}>
             <h1>Resume</h1>
@@ -50,11 +43,7 @@ function Resume(props) {
                 {feedback}
             </ul>
 
-            <ul>
-                <h2>Languages</h2>
-
-                {languages}
-            </ul>
+            <LanguagesChart />
         </section>
     )
 }

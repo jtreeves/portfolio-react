@@ -68,15 +68,18 @@ const resume = {
     languages: [
         {
             name: 'JavaScript',
-            count: countProjectsUsingTechnology('JavaScript')
+            projects: countProjectsUsingTechnology('JavaScript'),
+            color: '#7851A9'
         },
         {
             name: 'Python',
-            count: countProjectsUsingTechnology('Python')
+            projects: countProjectsUsingTechnology('Python'),
+            color: '#6CBB3C'
         },
         {
             name: 'Ruby',
-            count: countProjectsUsingTechnology('Ruby')
+            projects: countProjectsUsingTechnology('Ruby'),
+            color: '#9B111E'
         }
     ]
 }

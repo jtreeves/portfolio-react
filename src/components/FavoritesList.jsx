@@ -11,11 +11,10 @@ function FavoritesList(props) {
     })
 
     return (
-        <ul>
+        <div className='favorites'>
             <h2>{heading}</h2>
-
-            {list}
-        </ul>
+            <ul>{list}</ul>
+        </div>
     )
 }
 

@@ -22,7 +22,7 @@ function About(props) {
                 />
 
                 <article>
-                    <div>
+                    <div id='bio'>
                         {bio}
                     </div>
 
