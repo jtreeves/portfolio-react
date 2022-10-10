@@ -12,9 +12,9 @@ function ProjectPreview(props) {
                 alt={props.title}
             />
 
-            <h3>
+            <h2>
                 {props.title}
-            </h3>
+            </h2>
         </li>
     )
 }

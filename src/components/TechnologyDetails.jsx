@@ -6,10 +6,10 @@ function TechnologyDetails(props) {
     const projects = findProjectsByTechnology(props.technology)
 
     return (
-        <div>
+        <div id='technology-details'>
             <h2>{props.technology}</h2>
 
-            <p>Products I have built using {props.technology}:</p>
+            <p>Projects I have built using {props.technology}:</p>
 
             <ProjectsList 
                 projects={projects}
