@@ -12,7 +12,7 @@ function LanguagesChart() {
     const cells = resume.languages.map((language, index) => {
         return (
             <Cell 
-                key={`cell-${index}`} 
+                key={`language-cell-${index}`} 
                 fill={language.color}
             />
         )
@@ -20,36 +20,20 @@ function LanguagesChart() {
 
     return (
         <BarChart
-            width={500}
-            height={400}
+            width={400}
+            height={300}
             data={resume.languages}
-            margin={{ 
-                top: 20, 
-                right: 20, 
-                left: 20, 
-                bottom: 5
-            }}
+            margin={{ top: 0, left: 0, right: 0, bottom: 0 }}
         >
-            <XAxis 
-                dataKey='name'
-            />
+            <XAxis dataKey='name' />
 
-            <YAxis 
-                label={{ 
-                    value: 'projects', 
-                    position: 'insideLeft',
-                    angle: -90
-                }} 
-            />
+            <YAxis label={{ value: 'projects', angle: -90, position: 'insideLeft' }} />
 
-            <CartesianGrid 
-                strokeDasharray='3 3' 
-            />
+            <CartesianGrid strokeDasharray='3 3' />
 
             <Bar 
                 dataKey='projects' 
-                fill='#06063F' 
-                background={{ fill: '#eee' }}
+                background={{ fill: '#ddd' }}
                 strokeWidth={1}
             >
                 {cells}
