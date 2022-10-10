@@ -63,9 +63,3 @@ form article {
         grid-template-columns: 1fr 2fr;
     }
 }
-
-@media only screen and (max-width: 450px) {
-    form article {
-        grid-template-columns: 1fr 1fr;
-    }
-}
