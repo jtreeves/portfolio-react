@@ -40,3 +40,20 @@
 .project-preview:hover h3 {
     opacity: 1;
 }
+
+#project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+#project-details img {
+    width: 300px;
+}
+
+#project-details div {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}

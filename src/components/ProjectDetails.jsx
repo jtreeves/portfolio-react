@@ -12,53 +12,53 @@ function ProjectDetails(props) {
     })
 
     return (
-        <div>
-            <h2>{props.project.title}</h2>
-
+        <div id='project-details'>
             <p>{props.project.description}</p>
 
-            <img 
-                src={props.project.image} 
-                alt={props.project.title}
-            />
+            <div>
+                <img 
+                    src={props.project.image} 
+                    alt={props.project.title}
+                    title='Screenshot of the project'
+                />
+            
+                <article>
+                    <p>{props.project.inspiration}</p>
+                    <h3>Features</h3>
+                    <ul>{features}</ul>
 
-            <p>{props.project.inspiration}</p>
+                    <div>
+                        <span>{formatDate(props.project.date)}</span>
+                        <a 
+                            href={props.project.deploymentLink}
+                            target='_blank'
+                            rel='noreferrer'
+                        >
+                            <button>
+                                View deployed {props.project.type}
+                            </button>
+                        </a>
 
-            <ul>
-                <h3>Features</h3>
+                        <a 
+                            href={props.project.repositoryLink}
+                            target='_blank'
+                            rel='noreferrer'
+                        >
+                            <button>
+                                View code
+                            </button>
+                        </a>
+                    </div>
 
-                {features}
-            </ul>
+                    <h3>Technologies Used By This Project</h3>
 
-            <span>{formatDate(props.project.date)}</span>
-
-            <article>
-                <a 
-                    href={props.project.deploymentLink}
-                    target='_blank'
-                    rel='noreferrer'
-                >
-                    <button>
-                        View deployed {props.project.type}
-                    </button>
-                </a>
-
-                <a 
-                    href={props.project.repositoryLink}
-                    target='_blank'
-                    rel='noreferrer'
-                >
-                    <button>
-                        View code
-                    </button>
-                </a>
-            </article>
-
-            <TechnologiesList 
-                technologies={props.project.technologies}
-                setTechnology={props.setTechnology}
-                setSection={props.setSection}
-            />
+                    <TechnologiesList 
+                        technologies={props.project.technologies}
+                        setTechnology={props.setTechnology}
+                        setSection={props.setSection}
+                    />
+                </article>
+            </div>
         </div>
     )
 }
