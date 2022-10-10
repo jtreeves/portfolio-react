@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body, h1, h2, h3, ul, p, section, article, div {
+    margin: 0;
+    color: #06063f;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #ebf2f4;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 100vh;
+}
+
+h1, h2, h3, nav, label, button, .link-button {
+    font-family: Montserrat, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #06063f;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
+
+nav span, nav ul li {
+    color: #ebf2f4;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li {
+    cursor: pointer;
+}
+
+nav div {
+    cursor: pointer;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav div img {
+    width: 20px;
+    border-radius: 100%;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 50px 100px;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+h2 {
+    font-size: larger;
+}
+
+h3 {
+    font-size: small;
+}
+
+button, .link-button {
+    display: flex;
+    align-self: center;
+    background-color: #06063f;
+    border: 3px solid #06063f;
+    border-radius: 3px;
+    color: #ebf2f4;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: small;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 450px) {
+    nav div span {
+        display: none;
+    }
+
+    h1 {
+        font-size: x-large;
+    }
+
+    h2 {
+        font-size: large;
+    }
+
+    section {
+        padding: 25px 50px;
+    }
+}

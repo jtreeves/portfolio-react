@@ -1,0 +1,61 @@
+#contact ul {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+#contact a {
+    text-decoration: none;
+    color: #06063f;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #06063f;
+    border-radius: 3px;
+    gap: 20px;
+    padding: 20px;
+    width: 50%;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    text-transform: uppercase;
+}
+
+input, textarea {
+    border: 1px solid #06063f;
+    border-radius: 1px;
+}
+
+textarea {
+    height: 100px;
+}
+
+form article {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 3fr;
+}
+
+@media only screen and (max-width: 1000px) {
+    form {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    form {
+        width: 100%;
+    }
+
+    form article {
+        grid-template-columns: 1fr 2fr;
+    }
+}

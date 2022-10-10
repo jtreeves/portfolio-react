@@ -1,62 +1,63 @@
-import {
-    Routes,
-    Route,
-    Navigate,
-    useLocation
-} from 'react-router-dom'
-import Home from './pages/Home'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Resume from './pages/Resume'
-import Projects from './pages/Projects'
-import ProjectDetails from './pages/ProjectDetails'
+import { useState } from 'react'
+import Home from './sections/Home'
+import About from './sections/About'
+import Contact from './sections/Contact'
+import Resume from './sections/Resume'
+import Projects from './sections/Projects'
+import Technologies from './sections/Technologies'
 import NavBar from './components/NavBar'
-import './style/main.css'
+import './styles/main.css'
 
 function App() {
-    const location = useLocation()
-    const notHome = location.pathname !== '/'
+    const [section, setSection] = useState('home')
+    const [project, setProject] = useState(null)
+    const [technology, setTechnology] = useState(null)
+
+    const clearProjectAndTechnology = () => {
+        setProject(null)
+        setTechnology(null)
+    }
 
     return (
         <>
-            {notHome && <NavBar />}
+            <NavBar 
+                setSection={setSection} 
+                clearProjectAndTechnology={clearProjectAndTechnology}
+            />
 
-            <Routes>
-                <Route
-                    path='/'
-                    element={<Home />}
-                />
-                
-                <Route
-                    path='home'
-                    element={<Navigate to='/' replace />}
-                />
+            {section === 'home' && 
+                <Home />
+            }
 
-                <Route
-                    path='about'
-                    element={<About />}
-                />
-                
-                <Route
-                    path='contact'
-                    element={<Contact />}
-                />
+            {section === 'about' && 
+                <About />
+            }
 
-                <Route
-                    path='resume'
-                    element={<Resume />}
-                />
+            {section === 'contact' && 
+                <Contact />
+            }
 
-                <Route
-                    path='projects'
-                    element={<Projects />}
-                />
+            {section === 'resume' && 
+                <Resume />
+            }
 
-                <Route 
-                    path='projects/:projectName'
-                    element={<ProjectDetails />}
+            {section === 'projects' && 
+                <Projects 
+                    project={project}
+                    setProject={setProject}
+                    setTechnology={setTechnology}
+                    setSection={setSection}
                 />
-            </Routes>
+            }
+
+            {section === 'technologies' && 
+                <Technologies 
+                    technology={technology}
+                    setTechnology={setTechnology} 
+                    setProject={setProject}
+                    setSection={setSection}
+                />
+            }
         </>
     )
 }

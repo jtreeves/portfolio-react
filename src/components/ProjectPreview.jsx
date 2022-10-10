@@ -1,29 +1,21 @@
-import { Link } from 'react-router-dom'
-import { Card, Button } from 'react-bootstrap'
-import hyphenateWords from '../utilities/hyphenateWords'
+import '../styles/projects.css'
 
 function ProjectPreview(props) {
-    const projectPath = hyphenateWords(props.title)
-
     return (
-        <Card>
-            <Card.Img 
-                variant='top' 
+        <li 
+            onClick={props.setter}
+            className='project-preview'
+            title='Click to learn more about this project'
+        >
+            <img 
                 src={props.image} 
+                alt={props.title}
             />
 
-            <Card.Body>
-                <Card.Title>
-                    {props.title}
-                </Card.Title>
-
-                <Link to={projectPath}>
-                    <Button variant='primary'>
-                        Learn more
-                    </Button>
-                </Link>
-            </Card.Body>
-        </Card>
+            <h2>
+                {props.title}
+            </h2>
+        </li>
     )
 }
 
