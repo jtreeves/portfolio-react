@@ -97,6 +97,12 @@ a {
     text-decoration: none;
 }
 
+@media only screen and (max-width: 750px) {
+    section {
+        padding: 25px 50px;
+    }
+}
+
 @media only screen and (max-width: 450px) {
     nav div span {
         display: none;
@@ -111,6 +117,6 @@ a {
     }
 
     section {
-        padding: 25px 50px;
+        padding: 10px 25px;
     }
 }

@@ -45,9 +45,3 @@ blockquote {
         flex-direction: column;
     }
 }
-
-@media only screen and (max-width: 500px) {
-    blockquote {
-        padding: 0;
-    }
-}
