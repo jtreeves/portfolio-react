@@ -5,8 +5,8 @@ import {
     Legend,
     Tooltip
 } from 'recharts'
-import generateRandomColors from '../utilities/generateRandomColors'
 import summarizeJobsByCategoryDuration from '../utilities/summarizeJobsByCategoryDuration'
+import generateRandomColors from '../utilities/generateRandomColors'
 
 function IndustriesChart() {
     const categoryDurations = summarizeJobsByCategoryDuration()
@@ -15,7 +15,7 @@ function IndustriesChart() {
     const cells = colors.map((color, index) => {
         return (
             <Cell 
-                key={`color-cell-${index}`}
+                key={`industry-cell-${index}`}
                 fill={color}
             />
         )

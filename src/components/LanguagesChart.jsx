@@ -6,14 +6,19 @@ import {
     CartesianGrid,
     Cell
 } from 'recharts'
-import resume from '../data/resume'
+import summarizeLanguagesByProjects from '../utilities/summarizeLanguagesByProjects'
+import generateRandomColors from '../utilities/generateRandomColors'
 
 function LanguagesChart() {
-    const cells = resume.languages.map((language, index) => {
+    const languages = ['JavaScript', 'Python', 'Ruby']
+    const summaries = summarizeLanguagesByProjects(languages)
+    const colors = generateRandomColors(summaries.length)
+
+    const cells = colors.map((color, index) => {
         return (
             <Cell 
                 key={`language-cell-${index}`} 
-                fill={language.color}
+                fill={color.color}
             />
         )
     })
@@ -27,7 +32,7 @@ function LanguagesChart() {
             <BarChart
                 width={300}
                 height={200}
-                data={resume.languages}
+                data={summaries}
                 margin={{ top: 0, left: 0, right: 0, bottom: 0 }}
             >
                 <XAxis dataKey='name' />
