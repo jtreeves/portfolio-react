@@ -4,8 +4,6 @@ import capitalizeWord from './capitalizeWord'
 import findUniqueCategories from './findUniqueCategories'
 
 function summarizeJobsByCategoryDuration() {
-    let total = 0
-
     const uniqueCategories = findUniqueCategories()
 
     const categories = uniqueCategories.map(category => {
@@ -25,18 +23,10 @@ function summarizeJobsByCategoryDuration() {
         }
     })
 
-    categories.forEach(category => {
-        total += category.duration
-    })
-
-    categories.forEach(category => {
-        category.percentage = category.duration / total
-    })
-
     const finalCategories = categories.map(category => {
         return {
             name: capitalizeWord(category.name),
-            percentage: Math.round(category.percentage * 10000) / 100
+            duration: Math.round(category.duration * 100) / 100
         }
     })
 
