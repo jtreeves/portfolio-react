@@ -25,7 +25,7 @@ function IndustriesChart() {
         <div className='chart'>
             <h2>Industries</h2>
 
-            <p>what percent of my time I have spent in each industry</p>
+            <p>how many years I have spent in each industry</p>
 
             <PieChart 
                 width={300} 
@@ -34,7 +34,7 @@ function IndustriesChart() {
             >
                 <Pie 
                     data={categoryDurations} 
-                    dataKey='percentage' 
+                    dataKey='duration' 
                     nameKey='name' 
                     cx='50%' 
                     cy='50%' 
