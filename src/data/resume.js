@@ -43,14 +43,14 @@ const resume = {
             company: 'Atlanta Magazine',
             category: 'journalism',
             startDate: new Date('April 1, 2010'),
-            endDate: new Date('March 1, 2011')
+            endDate: new Date('April 1, 2011')
         },
         {
             position: 'Editorial Assistant',
             company: 'Public Broadcasting Atlanta',
             category: 'journalism',
             startDate: new Date('November 1, 2009'),
-            endDate: new Date('March 1, 2010')
+            endDate: new Date('April 1, 2010')
         }
     ],
     feedback: [
