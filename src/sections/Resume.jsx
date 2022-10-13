@@ -5,7 +5,7 @@ import SkillsChart from '../components/SkillsChart'
 import resume from '../data/resume'
 import Feedback from '../components/Feedback'
 
-function Resume(props) {
+function Resume() {
     const feedback = resume.feedback.map((item, index) => {
         return (
             <Feedback 

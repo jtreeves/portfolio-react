@@ -1,7 +1,7 @@
 import about from '../data/about'
 import '../styles/home.css'
 
-function Home(props) {
+function Home() {
     return (
         <section id='home'>
             <h1>{about.name}</h1>

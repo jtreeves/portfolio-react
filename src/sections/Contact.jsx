@@ -9,7 +9,7 @@ const SERVICE_ID = process.env.REACT_APP_SERVICE_ID
 const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID
 const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY
 
-function Contact(props) {
+function Contact() {
     const form = useRef()
 
     const handleSubmit = async (e) => {

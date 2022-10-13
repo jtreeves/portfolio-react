@@ -2,7 +2,7 @@ import FavoritesList from '../components/FavoritesList'
 import about from '../data/about'
 import '../styles/about.css'
 
-function About(props) {
+function About() {
     const bio = about.bio.map((paragraph, index) => {
         return (
             <p key={index}>
