@@ -18,7 +18,7 @@ function LanguagesChart() {
         return (
             <Cell 
                 key={`language-cell-${index}`} 
-                fill={color.color}
+                fill={color}
             />
         )
     })
